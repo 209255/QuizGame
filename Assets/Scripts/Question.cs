@@ -17,7 +17,7 @@ public class Question : MonoBehaviour {
         questionData = JsonMapper.ToObject (jsonString);
         OnClick();
 
-    }
+    } 
 
     IEnumerator Json()
     {
