@@ -2,8 +2,8 @@
 "data":[
 {
 	"id":"1",
-	"soal":"3 * 3 + 2 =",
-	"jawaban":[
+	"question":"3 * 3 + 2 =",
+	"answer":[
 		"11",
 		"15",
 		"17",
@@ -13,8 +13,8 @@
 },
 {
 	"id":"2",
-	"soal":"20 / 5 =",
-	"jawaban":[
+	"question":"20 / 5 =",
+	"answer":[
 		"4",
 		"3",
 		"2",
@@ -23,8 +23,8 @@
 },
 {
 	"id":"3",
-	"soal":"16 + 6 = ",
-	"jawaban":[
+	"question":"16 + 6 = ",
+	"answer":[
 		"22",
 		"21",
 		"20",
@@ -33,8 +33,8 @@
 },
 {
 	"id":"4",
-	"soal":"2 * 4 =",
-	"jawaban":[
+	"question":"2 * 4 =",
+	"answer":[
 		"8",
 		"6",
 		"10",
@@ -43,8 +43,8 @@
 },
 {
 	"id":"5",
-	"soal":"1+4*2",
-	"jawaban":[
+	"question":"1+4*2",
+	"answer":[
 		"8",
 		"10",
 		"12",
@@ -53,8 +53,8 @@
 },
 {
 	"id":"6",
-	"soal":"Jika A+1=10 , B+A=11 C= ?",
-	"jawaban":[
+	"question":"Jika A+1=10 , B+A=11 C= ?",
+	"answer":[
 		"EGP",
 		"1",
 		"12",
@@ -63,8 +63,8 @@
 },
 {
 	"id":"7",
-	"soal":"44/11",
-	"jawaban":[
+	"question":"44/11",
+	"answer":[
 		"4",
 		"2",
 		"5",
@@ -73,8 +73,8 @@
 },
 {
 	"id":"8",
-	"soal":"1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 = ",
-	"jawaban":[
+	"question":"1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 = ",
+	"answer":[
 		"16",
 		"15",
 		"17",
@@ -83,8 +83,8 @@
 },
 {
 	"id":"9",
-	"soal":"Berapakah jawaban sebelumnya ",
-	"jawaban":[
+	"question":"Berapakah answer sebelumnya ",
+	"answer":[
 		"16",
 		"17",
 		"18",

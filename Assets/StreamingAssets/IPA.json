@@ -2,8 +2,8 @@
 "data":[
 {
 	"id":"1",
-	"soal":"This is Question",
-	"jawaban":[
+	"question":"This is Question",
+	"answer":[
 		"This is the correct answer",
 		"Wrong Answer",
 		"Wrong Answer",
@@ -13,8 +13,8 @@
 },
 {
 	"id":"2",
-	"soal":"ayam berkembang biak dengan cara",
-	"jawaban":[
+	"question":"ayam berkembang biak dengan cara",
+	"answer":[
 		"Bertelur",
 		"Mengeram",
 		"Melahirkan",
@@ -23,8 +23,8 @@
 },
 {
 	"id":"3",
-	"soal":"Manusia bernafas menggunakan",
-	"jawaban":[
+	"question":"Manusia bernafas menggunakan",
+	"answer":[
 		"Bensin",
 		"Paru Paru",
 		"Trakea",
@@ -33,8 +33,8 @@
 },
 {
 	"id":"4",
-	"soal":"Tulang yang melindungi organ dalam manusia adalah ....",
-	"jawaban":[
+	"question":"Tulang yang melindungi organ dalam manusia adalah ....",
+	"answer":[
 		"Tulang Rusuk",
 		"Tengkorak",
 		"Tulang Organ",
@@ -43,8 +43,8 @@
 },
 {
 	"id":"5",
-	"soal":"Kumpulan makhluk hidup dalam satu tempat disebut",
-	"jawaban":[
+	"question":"Kumpulan makhluk hidup dalam satu tempat disebut",
+	"answer":[
 		"Ekosistim",
 		"Populasi",
 		"Sosial",
@@ -53,8 +53,8 @@
 },
 {
 	"id":"6",
-	"soal":"Dibawah ini yang buka konduktor panas",
-	"jawaban":[
+	"question":"Dibawah ini yang buka konduktor panas",
+	"answer":[
 		"Tembaga",
 		"Kain",
 		"Plastik",
@@ -63,8 +63,8 @@
 },
 {
 	"id":"7",
-	"soal":"Untuk mengurangi gaya gesek pada mesin, digunakan",
-	"jawaban":[
+	"question":"Untuk mengurangi gaya gesek pada mesin, digunakan",
+	"answer":[
 		"Oli",
 		"Sabun",
 		"Bensin",
@@ -73,8 +73,8 @@
 },
 {
 	"id":"8",
-	"soal":"Salah satu benda yang dapat ditarik oleh magnet adalah",
-	"jawaban":[
+	"question":"Salah satu benda yang dapat ditarik oleh magnet adalah",
+	"answer":[
 		"Sendok Alumunium",
 		"Cermin",
 		"Jarum",
@@ -83,8 +83,8 @@
 },
 {
 	"id":"9",
-	"soal":"Berikut ini yang tidak termasuk pesawat sederhana adalah",
-	"jawaban":[
+	"question":"Berikut ini yang tidak termasuk pesawat sederhana adalah",
+	"answer":[
 		"Tambang",
 		"Tangga",
 		"Cangkul",
