@@ -67,5 +67,5 @@ public class Question : MonoBehaviour {
             Debug.Log("Answer correct");
         else
             Debug.Log("Answer wrong");
-    }
+    } 
 }
