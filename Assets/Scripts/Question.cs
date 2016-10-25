@@ -12,12 +12,12 @@ public class Question : MonoBehaviour {
     public GameObject ansPrefab;
     public bool nextQuestion;
     public bool clickQuestion;
-	public void QuestionBegin(string jsonName)
+    public void QuestionBegin(string jsonName)
     {
         nextQuestion = true;
-        filePath = Path.Combine(Application.streamingAssetsPath, jsonName+".json");
+        filePath = Path.Combine(Application.streamingAssetsPath, jsonName + ".json");
         StartCoroutine("Json");
-        questionData = JsonMapper.ToObject (jsonString);
+        questionData = JsonMapper.ToObject(jsonString);
         OnClick();
 
     }
@@ -72,6 +72,7 @@ public class Question : MonoBehaviour {
             QuestionNum++;
             nextQuestion = false;
             clickQuestion = true;
+            StartCoroutine("Timer");
         }
     }
     public void Answer(string questionNum)
@@ -81,7 +82,7 @@ public class Question : MonoBehaviour {
             if (questionNum == "0")
             {
                 GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
-                GameObject.Find("Image ("+ QuestionNum+")").GetComponent<Image>().color= Color.green;
+                GameObject.Find("Image ("+QuestionNum+")").GetComponent<Image>().color = Color.green;
                 Debug.Log("Answer correct");
             }
             else
@@ -93,5 +94,37 @@ public class Question : MonoBehaviour {
         }
         nextQuestion = true;
         clickQuestion = false;
+      
+    }
+    IEnumerator Timer()
+    {
+        Image time = GameObject.Find("Timer").GetComponent<Image>();
+        time.fillAmount = 1;
+        float timeToWait = 3f;
+        float incrementToRemote = 0.05f;
+
+        float delta = time.fillAmount / timeToWait * incrementToRemote;
+
+        while(timeToWait > 0)
+        {
+            yield return new WaitForSeconds(incrementToRemote);
+            if (!nextQuestion)
+            {
+                time.fillAmount -= delta;
+                timeToWait -= incrementToRemote;
+            }
+            else
+                timeToWait = 0;
+        }
+        if(time.fillAmount <=0.1f)
+        {
+            for(int i = 1;i<4; i++)
+                GameObject.Find("Wrong" + i).GetComponent<Button>().image.color = Color.red;
+
+            GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
+            GameObject.Find("Image ("+QuestionNum+")").GetComponent<Image>().color = Color.red;
+            clickQuestion = false;
+            nextQuestion = true;
+        }
     }
 }
