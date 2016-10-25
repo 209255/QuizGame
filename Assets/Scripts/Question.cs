@@ -12,8 +12,10 @@ public class Question : MonoBehaviour {
     public GameObject ansPrefab;
     public bool nextQuestion;
     public bool clickQuestion;
+    public int score;
     public void QuestionBegin(string jsonName)
     {
+        score = 0;
         nextQuestion = true;
         filePath = Path.Combine(Application.streamingAssetsPath, jsonName + ".json");
         StartCoroutine("Json");
@@ -38,6 +40,19 @@ public class Question : MonoBehaviour {
 
     public void OnClick()
     {
+        if(QuestionNum >= questionData["data"].Count)
+        {
+            Debug.Log("Gello");
+            if(score == questionData["data"].Count)
+            {
+                GameObject.Find("Rank").GetComponent<Text>().text = "Excelent";
+            }
+            MenuManager menuResult = GameObject.Find("Canvas").GetComponent<MenuManager>();
+            menuResult.ShowMenu(GameObject.Find("Result").GetComponent<Menu>());
+
+            GameObject.Find("Score").GetComponent<Text>().text = score.ToString()+ "/"+questionData["data"].Count;
+        }
+ 
         if (nextQuestion)
         {
             var ansDestroy = GameObject.FindGameObjectsWithTag("Answer");
@@ -81,6 +96,7 @@ public class Question : MonoBehaviour {
         {
             if (questionNum == "0")
             {
+                score++;
                 GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
                 GameObject.Find("Image ("+QuestionNum+")").GetComponent<Image>().color = Color.green;
                 Debug.Log("Answer correct");
