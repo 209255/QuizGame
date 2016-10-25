@@ -10,14 +10,17 @@ public class Question : MonoBehaviour {
     public JsonData questionData;
     public int QuestionNum;
     public GameObject ansPrefab;
+    public bool nextQuestion;
+    public bool clickQuestion;
 	public void QuestionBegin(string jsonName)
     {
+        nextQuestion = true;
         filePath = Path.Combine(Application.streamingAssetsPath, jsonName+".json");
         StartCoroutine("Json");
         questionData = JsonMapper.ToObject (jsonString);
         OnClick();
 
-    } 
+    }
 
     IEnumerator Json()
     {
@@ -35,37 +38,60 @@ public class Question : MonoBehaviour {
 
     public void OnClick()
     {
-        var ansDestroy = GameObject.FindGameObjectsWithTag("Answer");
-        if(ansDestroy != null)
+        if (nextQuestion)
         {
-            foreach (var ans in ansDestroy)
-                DestroyImmediate(ans);
+            var ansDestroy = GameObject.FindGameObjectsWithTag("Answer");
+            if (ansDestroy != null)
+            {
+                foreach (var ans in ansDestroy)
+                    DestroyImmediate(ans);
+            }
+            GameObject.Find("Question/Panel/QuestionContainer/Question/Text").GetComponentInChildren<Text>().text = questionData["data"][QuestionNum]["question"].ToString();
+
+            for (var i = 0; i < questionData["data"][QuestionNum]["answer"].Count; i++)
+            {
+                var answer = Instantiate(ansPrefab);
+                answer.GetComponentInChildren<Text>().text = questionData["data"][QuestionNum]["answer"][i].ToString();
+                var answerC = GameObject.Find("AnswersContainer").GetComponent<Transform>();
+                answer.transform.SetParent(answerC);
+
+                string offset = i.ToString();
+                if (i == 0)
+                {
+                    answer.name = "Correct";
+                    answer.GetComponent<Button>().onClick.AddListener(() => Answer("0"));
+                }
+                else
+                {
+                    answer.name = "Wrong" + offset;
+                    answer.GetComponent<Button>().onClick.AddListener(() => Answer(offset));
+                }
+                answer.transform.SetSiblingIndex(Random.Range(0, 3));
+            }
+
+            QuestionNum++;
+            nextQuestion = false;
+            clickQuestion = true;
         }
-        GameObject.Find("Question/Panel/QuestionContainer/Question/Text").GetComponentInChildren<Text>().text = questionData["data"][QuestionNum]["question"].ToString();
-
-        for(var i = 0; i <questionData["data"][QuestionNum]["answer"].Count; i++)
-        {
-            var answer = Instantiate(ansPrefab);
-            answer.GetComponentInChildren<Text>().text = questionData["data"][QuestionNum]["answer"][i].ToString();
-            var answerC = GameObject.Find("AnswersContainer").GetComponent<Transform>();
-            answer.transform.SetParent(answerC);
-
-            if(i==0)
-             answer.GetComponent<Button>().onClick.AddListener(() => Answer(1));
-            
-            else
-             answer.GetComponent<Button>().onClick.AddListener(() => Answer(0));
-            answer.transform.SetSiblingIndex(Random.Range(0, 3));
-        }
-        
-        QuestionNum++;
-
     }
-    public void Answer(int x)
+    public void Answer(string questionNum)
     {
-        if (x == 1)
-            Debug.Log("Answer correct");
-        else
-            Debug.Log("Answer wrong");
-    } 
+        if (clickQuestion)
+        {
+            if (questionNum == "0")
+            {
+                GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
+                GameObject.Find("Image ("+ QuestionNum+")").GetComponent<Image>().color= Color.green;
+                Debug.Log("Answer correct");
+            }
+            else
+            {
+                GameObject.Find("Wrong" + questionNum).GetComponent<Button>().image.color = Color.red;
+                GameObject.Find("Image ("+QuestionNum+")").GetComponent<Image>().color = Color.red;
+                Debug.Log("Answer wrong");
+            }
+        }
+        nextQuestion = true;
+        clickQuestion = false;
+    }
 }
