@@ -20,7 +20,9 @@ public class Question : MonoBehaviour {
         filePath = Path.Combine(Application.streamingAssetsPath, jsonName + ".json");
         StartCoroutine("Json");
         questionData = JsonMapper.ToObject(jsonString);
+        GameObject.Find("CategoryTab/Text").GetComponentInChildren<Text>().text = jsonName;
         OnClick();
+        
 
     }
 
@@ -40,7 +42,8 @@ public class Question : MonoBehaviour {
 
     public void OnClick()
     {
-        if(QuestionNum >= questionData["data"].Count)
+        
+        if (QuestionNum >= questionData["data"].Count)
         {
             Debug.Log("Gello");
             if(score == questionData["data"].Count)
