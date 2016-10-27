@@ -1,0 +1,95 @@
+{
+"data":[
+{
+	"id":"1",
+	"question":"This is Question",
+	"answer":[
+		"This is the correct answer",
+		"Wrong Answer",
+		"Wrong Answer",
+		"Wrong Answer"
+	]
+	
+},
+{
+	"id":"2",
+	"question":"Jak ma na imiê Adam Ma³ysz",
+	"answer":[
+		"Adam",
+		"Adam",
+		"Adam",
+		"Adam"
+	]
+},
+{
+	"id":"3",
+	"question":"Jakiego klubu wychowankiem jest Tomasz Gollob",
+	"answer":[
+		"Gorzów",
+		"Toruñ",
+		"Bydgoszcz",
+		"Pi³a"
+	]
+},
+{
+	"id":"4",
+	"question":"Jakiego klubu wychowankiem jest Jaros³aw Hampel",
+	"answer":[
+		"Pi³a",
+		"Leszno",
+		"Wroc³aw",
+		"Zielona Góra"
+	]
+},
+{
+	"id":"5",
+	"question":"Kto zosta³ pierwszym polskim IMŒ",
+	"answer":[
+		"Edward Jancarz",
+		"Antoni Woryna",
+		"Jerzy Szczakiel",
+		"Tomasz Gollob"
+	]
+},
+{
+	"id":"6",
+	"question":"Ktory polski kulb zdoby³ najwiêcej tytu³ów DMP na ¿u¿lu",
+	"answer":[
+		"Leszno",
+		"Pi³a",
+		"Gorzów",
+		"Toruñ"
+	]
+},
+{
+	"id":"7",
+	"question":"Pytanie",
+	"answer":[
+		"Oli",
+		"Sabun",
+		"Bensin",
+		"Minyak"
+	]
+},
+{
+	"id":"8",
+	"question":"Salah satu benda yang dapat ditarik oleh magnet adalah",
+	"answer":[
+		"Sendok Alumunium",
+		"Cermin",
+		"Jarum",
+		"Cincin Emas"
+	]
+},
+{
+	"id":"9",
+	"question":"Berikut ini yang tidak termasuk pesawat sederhana adalah",
+	"answer":[
+		"Tambang",
+		"Tangga",
+		"Cangkul",
+		"Gunting"
+	]
+}
+]
+}
