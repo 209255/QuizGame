@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{025F7AB3-DFAD-058F-25BF-8AA65B4ECF48}</ProjectGuid>
+    <ProjectGuid>{D7EF783E-1F81-FC80-230F-8503BB368E26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,8 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AccCub.cs" />
+     <Compile Include="Assets\Scripts\AccCubSer.cs" />
+     <Compile Include="Assets\Scripts\Category.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
+     <Compile Include="Assets\Scripts\Question.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -55,6 +59,9 @@
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>C:/Users/Bartolomeo/Documents/QuizGame/Assets/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
