@@ -23,5 +23,6 @@ namespace Assets.Scripts.Networking
         {
             throw new NotImplementedException();
         }
+
     }
 }
