@@ -1,13 +1,21 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class MenuManager : MonoBehaviour {
+﻿public class MenuManager : IMenuManager
+{
 
 	public Menu currentMenu;
+    private Menu mainMenu;
 
-	public void Start(){
-		ShowMenu (currentMenu);
-	}
+    public void RegisterMainMenu(Menu mainMenu)
+    {
+        this.mainMenu = mainMenu;
+        BackToMainMenu();
+    }
+
+    public void BackToMainMenu()
+    {
+        if (mainMenu == null)
+            return;
+        ShowMenu(mainMenu);
+    }
 
 	public void ShowMenu(Menu menu){
 

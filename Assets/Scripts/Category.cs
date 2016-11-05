@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using Autofac;
 using System.IO;
 public class Category : MonoBehaviour {
 
@@ -23,7 +23,7 @@ public class Category : MonoBehaviour {
             kat.transform.SetParent(GameObject.Find("Category/Panel/Scroll/CategoryContainer").GetComponent<Transform>());
             kat.GetComponentInChildren<Text>().text = kat.name;
             kat.GetComponent<Button>().onClick.AddListener(() => OnClick(kat.name));
-            kat.GetComponent<Button>().onClick.AddListener(() => menu.ShowMenu(GameObject.Find("Canvas/Question").GetComponent<Menu>()));
+            kat.GetComponent<Button>().onClick.AddListener(() => DependencyResolver.Container.Resolve<IMenuManager>().ShowMenu(GameObject.Find("Canvas/Question").GetComponent<Menu>()));
         }
         rect.sizeDelta = new Vector2(rect.sizeDelta.x,(rect.sizeDelta.y/6)*files.Length);
 	}

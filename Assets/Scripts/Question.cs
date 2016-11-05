@@ -1,149 +1,50 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.IO;
-using LitJson;
+﻿using Autofac;
+using UnityEngine;
 using UnityEngine.UI;
+
 public class Question : MonoBehaviour {
 
-    public string filePath;
-    public string jsonString;
-    public JsonData questionData;
-    public int QuestionNum;
-    public GameObject ansPrefab;
-    public bool nextQuestion;
     public bool clickQuestion;
     public int score;
+    private QuestionMenu questionMenu;
+    private int questionsCount;
+
+    void Start()
+    {
+        questionMenu = FindObjectOfType<QuestionMenu>();
+        questionMenu.CorrenctAnswer += Answered;
+    }
+
+    private void Answered(bool isCorrect)
+    {
+        if (isCorrect)
+            ++score;
+    }
+
     public void QuestionBegin(string jsonName)
     {
         score = 0;
-        nextQuestion = true;
-        filePath = Path.Combine(Application.streamingAssetsPath, jsonName + ".json");
-        StartCoroutine("Json");
-        questionData = JsonMapper.ToObject(jsonString);
+        questionsCount = questionMenu.LoadQuestions(jsonName);
         GameObject.Find("CategoryTab/Text").GetComponentInChildren<Text>().text = jsonName;
         OnClick();
-        
-
-    }
-
-    IEnumerator Json()
-    {
-        if (filePath.Contains("://"))
-        {
-            WWW www = new WWW(filePath);
-            yield return www;
-            jsonString = www.text;
-        }
-        else
-        {
-            jsonString = File.ReadAllText(filePath);
-        }
     }
 
     public void OnClick()
     {
         
-        if (QuestionNum >= questionData["data"].Count)
+        if (!questionMenu.ShowNextQuestion())
         {
-            Debug.Log("Gello");
-            if(score == questionData["data"].Count)
-            {
-                GameObject.Find("Rank").GetComponent<Text>().text = "Excelent";
-            }
-            MenuManager menuResult = GameObject.Find("Canvas").GetComponent<MenuManager>();
+            IMenuManager menuResult = DependencyResolver.Container.Resolve<IMenuManager>();
             menuResult.ShowMenu(GameObject.Find("Result").GetComponent<Menu>());
 
-            GameObject.Find("Score").GetComponent<Text>().text = score.ToString()+ "/"+questionData["data"].Count;
+            GameObject.Find("Score").GetComponent<Text>().text = score.ToString()+ "/" + questionsCount;
         }
- 
-        if (nextQuestion)
-        {
-            var ansDestroy = GameObject.FindGameObjectsWithTag("Answer");
-            if (ansDestroy != null)
-            {
-                foreach (var ans in ansDestroy)
-                    DestroyImmediate(ans);
-            }
-            GameObject.Find("Question/Panel/QuestionContainer/Question/Text").GetComponentInChildren<Text>().text = questionData["data"][QuestionNum]["question"].ToString();
 
-            for (var i = 0; i < questionData["data"][QuestionNum]["answer"].Count; i++)
-            {
-                var answer = Instantiate(ansPrefab);
-                answer.GetComponentInChildren<Text>().text = questionData["data"][QuestionNum]["answer"][i].ToString();
-                var answerC = GameObject.Find("AnswersContainer").GetComponent<Transform>();
-                answer.transform.SetParent(answerC);
-
-                string offset = i.ToString();
-                if (i == 0)
-                {
-                    answer.name = "Correct";
-                    answer.GetComponent<Button>().onClick.AddListener(() => Answer("0"));
-                }
-                else
-                {
-                    answer.name = "Wrong" + offset;
-                    answer.GetComponent<Button>().onClick.AddListener(() => Answer(offset));
-                }
-                answer.transform.SetSiblingIndex(Random.Range(0, 3));
-            }
-
-            QuestionNum++;
-            nextQuestion = false;
-            clickQuestion = true;
-            StartCoroutine("Timer");
-        }
     }
-    public void Answer(string questionNum)
+
+    void OnDestroy()
     {
-        if (clickQuestion)
-        {
-            if (questionNum == "0")
-            {
-                score++;
-                GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
-                GameObject.Find("Image ("+QuestionNum+")").GetComponent<Image>().color = Color.green;
-                Debug.Log("Answer correct");
-            }
-            else
-            {
-                GameObject.Find("Wrong" + questionNum).GetComponent<Button>().image.color = Color.red;
-                GameObject.Find("Image ("+QuestionNum+")").GetComponent<Image>().color = Color.red;
-                Debug.Log("Answer wrong");
-            }
-        }
-        nextQuestion = true;
-        clickQuestion = false;
-      
-    }
-    IEnumerator Timer()
-    {
-        Image time = GameObject.Find("Timer").GetComponent<Image>();
-        time.fillAmount = 1;
-        float timeToWait = 3f;
-        float incrementToRemote = 0.05f;
-
-        float delta = time.fillAmount / timeToWait * incrementToRemote;
-
-        while(timeToWait > 0)
-        {
-            yield return new WaitForSeconds(incrementToRemote);
-            if (!nextQuestion)
-            {
-                time.fillAmount -= delta;
-                timeToWait -= incrementToRemote;
-            }
-            else
-                timeToWait = 0;
-        }
-        if(time.fillAmount <=0.1f)
-        {
-            for(int i = 1;i<4; i++)
-                GameObject.Find("Wrong" + i).GetComponent<Button>().image.color = Color.red;
-
-            GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
-            GameObject.Find("Image ("+QuestionNum+")").GetComponent<Image>().color = Color.red;
-            clickQuestion = false;
-            nextQuestion = true;
-        }
+        if (questionMenu != null)
+            questionMenu.CorrenctAnswer -= Answered;
     }
 }

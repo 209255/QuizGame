@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.4.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -67,12 +69,36 @@
     <Reference Include="LitJson">
       <HintPath>Assets\LitJson.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac">
+      <HintPath>Assets\Scripts\DIContainer\Autofac.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MenuButtonController.cs" />
     <Compile Include="Assets\Scripts\Category.cs" />
-    <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\DIContainer\Bootstrapper.cs" />
+    <Compile Include="Assets\Scripts\DIContainer\DependencyResolver.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\MenuView\IMenuManager.cs" />
+    <Compile Include="Assets\Scripts\MenuView\Menu.cs" />
+    <Compile Include="Assets\Scripts\MenuView\QuestionMenu.cs" />
+    <Compile Include="Assets\Scripts\Networking\BluetoothServiceClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\BluetoothServiceServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\IBluetoothServiceClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\IBluetoothServiceServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\ICommunnication.cs" />
+    <Compile Include="Assets\Scripts\Networking\IMessage.cs" />
+    <Compile Include="Assets\Scripts\Networking\IRegister.cs" />
+    <Compile Include="Assets\Scripts\Networking\ITCPServiceClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\ITCPServiceServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\Message.cs" />
+    <Compile Include="Assets\Scripts\Networking\MessageSubject.cs" />
+    <Compile Include="Assets\Scripts\Networking\Register.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCPServiceClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCPServiceServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\UDPService.cs" />
     <Compile Include="Assets\Scripts\Question.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
