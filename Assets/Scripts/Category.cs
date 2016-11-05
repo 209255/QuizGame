@@ -5,14 +5,13 @@ using System.IO;
 public class Category : MonoBehaviour {
 
 
-    public GameObject katPrefab;
-    public MenuManager menu;
-    public Question question;
-	// Use this for initialization
+    private GameObject katPrefab;
+    private MenuManager menu;
+    private Question question;
+
 	void Start () {
 
         RectTransform rect = gameObject.GetComponent<RectTransform>();
-
         string filePath = Application.streamingAssetsPath;
         DirectoryInfo dir = new DirectoryInfo(filePath);
         FileInfo[] files = dir.GetFiles("*.json");
@@ -30,6 +29,5 @@ public class Category : MonoBehaviour {
     public void OnClick(string category)
     {
         question.QuestionBegin(category);
-        Debug.Log(category);
     }
 }

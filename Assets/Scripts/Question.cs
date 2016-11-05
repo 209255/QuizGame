@@ -3,16 +3,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Question : MonoBehaviour {
-
-    public bool clickQuestion;
-    public int score;
+    private int score;
     private QuestionMenu questionMenu;
-    private int questionsCount;
+  
 
     void Start()
     {
         questionMenu = FindObjectOfType<QuestionMenu>();
         questionMenu.CorrenctAnswer += Answered;
+        
     }
 
     private void Answered(bool isCorrect)
@@ -24,22 +23,22 @@ public class Question : MonoBehaviour {
     public void QuestionBegin(string jsonName)
     {
         score = 0;
-        questionsCount = questionMenu.LoadQuestions(jsonName);
+        questionMenu.LoadQuestions(jsonName);
         GameObject.Find("CategoryTab/Text").GetComponentInChildren<Text>().text = jsonName;
         OnClick();
     }
 
     public void OnClick()
     {
-        
-        if (!questionMenu.ShowNextQuestion())
+        if (questionMenu.CanClick)
         {
-            IMenuManager menuResult = DependencyResolver.Container.Resolve<IMenuManager>();
-            menuResult.ShowMenu(GameObject.Find("Result").GetComponent<Menu>());
-
-            GameObject.Find("Score").GetComponent<Text>().text = score.ToString()+ "/" + questionsCount;
+            if (!questionMenu.ShowNextQuestion())
+            {
+                IMenuManager menuResult = DependencyResolver.Container.Resolve<IMenuManager>();
+                menuResult.ShowMenu(GameObject.Find("Result").GetComponent<Menu>());
+                GameObject.Find("Score").GetComponent<Text>().text = score.ToString() + "/" + questionMenu.QuestionNum;
+            }
         }
-
     }
 
     void OnDestroy()

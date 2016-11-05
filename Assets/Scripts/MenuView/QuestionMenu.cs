@@ -7,25 +7,69 @@ using UnityEngine.UI;
 
 public class QuestionMenu : Menu
 {
-    //public Text questionTextField;
-    //public Text[] anwersTextFields;
-    public GameObject ansPrefab;
+    public int QuestionNum { get; private set; }
+    public event Action<bool> CorrenctAnswer;
+    public bool CanClick { get; private set; }
+    private GameObject ansPrefab;
     private string filePath;
     private string jsonString;
+    private bool nextQuestion;
     private JsonData questionData;
     private bool clickQuestion;
-    public int QuestionNum;
-    public event Action<bool> CorrenctAnswer;
+    
 
-    public int LoadQuestions(string fileName)
+    public void LoadQuestions(string fileName)
     {
+        DestoryStats();
+        QuestionNum = 0;
         filePath = Path.Combine(Application.streamingAssetsPath, fileName + ".json");
         StartCoroutine("Json");
         questionData = JsonMapper.ToObject(jsonString);
-        clickQuestion = true;
-        return questionData.Count;
+        CanClick = true;
+        nextQuestion = true;
+      
     }
+    public bool ShowNextQuestion()
+    {
 
+        if (QuestionNum == questionData["data"].Count)
+            return false;
+        if (nextQuestion)
+        {
+            DestroyAnswers();
+            LoadAnswers();
+            QuestionNum++;
+            clickQuestion = true;
+            CanClick = false;
+            nextQuestion = false;
+            StartCoroutine("Timer");
+
+        }
+        return true;
+    }
+    public void Answer(string answerNum)
+    {
+        if (clickQuestion)
+        {
+            if (answerNum == "0")
+            {
+                CorrenctAnswer(true);
+                GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
+                GameObject.Find("Image (" + QuestionNum + ")").GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+                CorrenctAnswer(false);
+                var g = GameObject.Find("Wrong" + answerNum).GetComponent<Button>().image;
+                g.color = Color.red;
+                GameObject.Find("Image (" + QuestionNum + ")").GetComponent<Image>().color = Color.red;
+            }
+        }
+        nextQuestion = true;
+        CanClick = true;
+        clickQuestion = false;
+
+    }
     IEnumerator Json()
     {
         if (filePath.Contains("://"))
@@ -35,22 +79,29 @@ public class QuestionMenu : Menu
             jsonString = www.text;
         }
         else
-        {
             jsonString = File.ReadAllText(filePath);
+    }
+    private void DestroyAnswers()
+    {
+        if (nextQuestion)
+        {
+            var ansDestroy = GameObject.FindGameObjectsWithTag("Answer");
+            if (ansDestroy != null)
+            {
+                foreach (var ans in ansDestroy)
+                    DestroyImmediate(ans);
+            }
         }
     }
-
-    public bool ShowNextQuestion()
+    private void DestoryStats()
     {
-        if (QuestionNum >= questionData["data"].Count)
-            return false;
-
-        var ansDestroy = GameObject.FindGameObjectsWithTag("Answer");
-        if (ansDestroy != null)
+        for(int i = 1;i<10;i++)
         {
-            foreach (var ans in ansDestroy)
-                DestroyImmediate(ans);
+            GameObject.Find("Image (" + i + ")").GetComponent<Image>().color = Color.black;
         }
+    }
+    private void LoadAnswers()
+    {
         GameObject.Find("Question/Panel/QuestionContainer/Question/Text").GetComponentInChildren<Text>().text = questionData["data"][QuestionNum]["question"].ToString();
 
         for (var i = 0; i < questionData["data"][QuestionNum]["answer"].Count; i++)
@@ -59,7 +110,6 @@ public class QuestionMenu : Menu
             answer.GetComponentInChildren<Text>().text = questionData["data"][QuestionNum]["answer"][i].ToString();
             var answerC = GameObject.Find("AnswersContainer").GetComponent<Transform>();
             answer.transform.SetParent(answerC);
-
             string offset = i.ToString();
             if (i == 0)
             {
@@ -68,57 +118,27 @@ public class QuestionMenu : Menu
             }
             else
             {
-
                 answer.name = "Wrong" + offset;
                 answer.GetComponent<Button>().onClick.AddListener(() => Answer(offset));
             }
             answer.transform.SetSiblingIndex(UnityEngine.Random.Range(0, 3));
         }
-        QuestionNum++;
-        clickQuestion = true;
-        StartCoroutine("Timer");
-
-        return true;
-
     }
 
-    public void Answer(string questionNum)
-    {
-        if (clickQuestion)
-        {
-            if (questionNum == "0")
-            {
-                CorrenctAnswer(true);
-                GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
-                GameObject.Find("Image (" + QuestionNum + ")").GetComponent<Image>().color = Color.green;
-                Debug.Log("Answer correct");
-            }
-            else
-            {
-                CorrenctAnswer(false);
-                GameObject.Find("Wrong" + questionNum).GetComponent<Button>().image.color = Color.red;
-                GameObject.Find("Image (" + QuestionNum + ")").GetComponent<Image>().color = Color.red;
-                Debug.Log("Answer wrong");
-            }
-        }
-
-        clickQuestion = false;
-
-    }
 
     IEnumerator Timer()
     {
+      
         Image time = GameObject.Find("Timer").GetComponent<Image>();
         time.fillAmount = 1;
         float timeToWait = 3f;
         float incrementToRemote = 0.05f;
-
         float delta = time.fillAmount / timeToWait * incrementToRemote;
 
         while (timeToWait > 0)
         {
             yield return new WaitForSeconds(incrementToRemote);
-            if (QuestionNum < questionData.Count)
+            if (!nextQuestion)
             {
                 time.fillAmount -= delta;
                 timeToWait -= incrementToRemote;
@@ -134,6 +154,8 @@ public class QuestionMenu : Menu
             GameObject.Find("Correct").GetComponent<Button>().image.color = Color.green;
             GameObject.Find("Image (" + QuestionNum + ")").GetComponent<Image>().color = Color.red;
             clickQuestion = false;
+            nextQuestion = true; 
+            CanClick = true;
         }
     }
 }
