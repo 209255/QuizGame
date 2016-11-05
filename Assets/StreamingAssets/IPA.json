@@ -1,0 +1,95 @@
+{
+"data":[
+{
+	"id":"1",
+	"question":"This is Question",
+	"answer":[
+		"This is the correct answer",
+		"Wrong Answer",
+		"Wrong Answer",
+		"Wrong Answer"
+	]
+	
+},
+{
+	"id":"2",
+	"question":"ayam berkembang biak dengan cara",
+	"answer":[
+		"Bertelur",
+		"Mengeram",
+		"Melahirkan",
+		"Beranak"
+	]
+},
+{
+	"id":"3",
+	"question":"Manusia bernafas menggunakan",
+	"answer":[
+		"Bensin",
+		"Paru Paru",
+		"Trakea",
+		"Ingsang"
+	]
+},
+{
+	"id":"4",
+	"question":"Tulang yang melindungi organ dalam manusia adalah ....",
+	"answer":[
+		"Tulang Rusuk",
+		"Tengkorak",
+		"Tulang Organ",
+		"Tulang Dalam"
+	]
+},
+{
+	"id":"5",
+	"question":"Kumpulan makhluk hidup dalam satu tempat disebut",
+	"answer":[
+		"Ekosistim",
+		"Populasi",
+		"Sosial",
+		"Tempat Tinggal"
+	]
+},
+{
+	"id":"6",
+	"question":"Dibawah ini yang buka konduktor panas",
+	"answer":[
+		"Tembaga",
+		"Kain",
+		"Plastik",
+		"Karet"
+	]
+},
+{
+	"id":"7",
+	"question":"Untuk mengurangi gaya gesek pada mesin, digunakan",
+	"answer":[
+		"Oli",
+		"Sabun",
+		"Bensin",
+		"Minyak"
+	]
+},
+{
+	"id":"8",
+	"question":"Salah satu benda yang dapat ditarik oleh magnet adalah",
+	"answer":[
+		"Sendok Alumunium",
+		"Cermin",
+		"Jarum",
+		"Cincin Emas"
+	]
+},
+{
+	"id":"9",
+	"question":"Berikut ini yang tidak termasuk pesawat sederhana adalah",
+	"answer":[
+		"Tambang",
+		"Tangga",
+		"Cangkul",
+		"Gunting"
+	]
+}
+]
+}
