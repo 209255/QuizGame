@@ -5,11 +5,11 @@ using System.Text;
 
 
 
-   interface ICommunnication
+  public interface ICommunnication
     {
-       void Send();
+       void Send(IMessage msg);
        event Action<IMessage> Received;
-    // IRegister<MessageSubject, Action<IMessage>> callbackRegister { get; };
+     //  IRegister<MessageSubject, Action<IMessage>> callbackRegister { get; };
        bool RegisterCallback(MessageSubject subject, Action<IMessage> callback);
        bool UnregisterCallback(MessageSubject subject, Action<IMessage> callback);
 
