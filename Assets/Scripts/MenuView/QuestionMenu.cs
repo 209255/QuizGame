@@ -10,7 +10,7 @@ public class QuestionMenu : Menu
     public int QuestionNum { get; private set; }
     public event Action<bool> CorrenctAnswer;
     public bool CanClick { get; private set; }
-    private GameObject ansPrefab;
+    public GameObject ansPrefab;
     private string filePath;
     private string jsonString;
     private bool nextQuestion;

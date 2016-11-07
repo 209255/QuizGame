@@ -5,9 +5,9 @@ using System.IO;
 public class Category : MonoBehaviour {
 
 
-    private GameObject katPrefab;
-    private MenuManager menu;
-    private Question question;
+    public GameObject katPrefab;
+    public MenuManager menu;
+    public Question question;
 
 	void Start () {
 
