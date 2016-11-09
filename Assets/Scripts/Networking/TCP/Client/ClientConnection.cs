@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Assets.Scripts.Networking.TCP.Client
-{
+
     public class ClientConnection : IClientConnection
     {
         public string ip
@@ -17,8 +16,11 @@ namespace Assets.Scripts.Networking.TCP.Client
             private set;            
         }
         ITcpClient socket;
-
-        public bool Connect(string ip, int port)
+    public ClientConnection(ITcpClient socket)
+    {
+        this.socket = socket;
+    }
+    public bool Connect(string ip, int port)
         {
             if (!socket.Connected)
             {
@@ -49,7 +51,7 @@ namespace Assets.Scripts.Networking.TCP.Client
         }
     }
     
-}
+
 
 public class InvalidIpAddressException : Exception
 {

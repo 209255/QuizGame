@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 
 
-    class Message:IMessage
+public class MessageSeparators
+{
+    public const char messageSeparator = ';';
+    public const char endOfTCPMessageSeparator = '^';
+}
+
+class Message:IMessage
     {
-    private readonly char messageSeparator = ';';
+    
         public MessageSubject subject { get; private set; }
         public string[] raw { get; private set; }
         public int Senderid { get; set; }
@@ -16,13 +22,13 @@ using System.Text;
     }
     public Message(string msg)
     {
-        raw = msg.Split(messageSeparator);
+        raw = msg.Split(MessageSeparators.messageSeparator);
         subject = (MessageSubject)ushort.Parse(raw[0]);
         
     }
     public override string ToString()
     {
-        return ((int)subject).ToString()+messageSeparator+Senderid.ToString()+GetData();
+        return ((int)subject).ToString()+ MessageSeparators.messageSeparator + Senderid.ToString()+GetData();
     }
     public virtual string GetData()
     {

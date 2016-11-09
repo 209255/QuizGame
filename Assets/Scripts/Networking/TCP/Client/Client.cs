@@ -6,41 +6,36 @@ using System.Net.Sockets;
 
  class Client : IClient
 {
-    
-    public string ip
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
+    private ITcpClient socket;
+    private IClientCommunication communication;
+    private IClientConnection connection;
 
-    public int port
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
+    public string ip { get { return connection.ip; } }
+    public int port { get { return connection.port; } }
 
+    public Client()
+    {
+        socket = new TCPClientAdapter();
+        communication = new ClientCommunication(socket);
+        connection = new ClientConnection(socket);
+    }
     public bool Connect(string ip, int port)
     {
-        throw new NotImplementedException();
+        return connection.Connect(ip, port);
     }
-
     public bool Disconnect()
     {
-        throw new NotImplementedException();
+        return connection.Disconnect();
     }
-
     public string[] Read()
     {
-        throw new NotImplementedException();
+        return communication.Read();
+    }
+    public void Send(IMessage message)
+    {
+        communication.Send(message.ToString());
     }
 
-    public void Send(IMessage msg)
-    {
-        throw new NotImplementedException();
-    }
+ 
 }
 
