@@ -29,6 +29,11 @@ namespace Assets.Scripts.Networking
             throw new NotImplementedException();
         }
 
+        public void Send(IMessage msg)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool UnregisterCallback(MessageSubject subject, Action<IMessage> callback)
         {
             throw new NotImplementedException();
