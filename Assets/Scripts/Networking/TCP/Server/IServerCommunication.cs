@@ -9,4 +9,5 @@ using System.Text;
         void Read();
         void SendTo(ushort id, IMessage msg);
         void SendToAll(IMessage msg);
-    }
+        NewMessage onNewMessage { get; set; }
+}

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Scripts.Networking
-{
+
     class UDPService : ICommunnication
     {
         public event Action<IMessage> Received;
@@ -19,9 +18,14 @@ namespace Assets.Scripts.Networking
             throw new NotImplementedException();
         }
 
-        public bool UnregisterCallback(MessageSubject subject, Action<IMessage> callback)
+    public void Send(IMessage msg)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool UnregisterCallback(MessageSubject subject, Action<IMessage> callback)
         {
             throw new NotImplementedException();
         }
     }
-}
+

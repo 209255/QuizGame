@@ -3,8 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 
 
-namespace Assets.Scripts.Networking.TCP.Utilities
-{
+
     public class TcpListener:ITcpListener
     {
         TcpListener client;
@@ -44,4 +43,4 @@ namespace Assets.Scripts.Networking.TCP.Utilities
             return client.EndAcceptTcpClient(asyncResult);
         }
     }
-}
+
