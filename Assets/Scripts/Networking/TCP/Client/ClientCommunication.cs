@@ -3,7 +3,7 @@ using System.Net.Sockets;
 using System.Text;
 
 
-    class ClientCommunication:IClientCommunication
+    class ClientCommunication:ICommunication
     {
         ITcpClient socket;
         private readonly char[] endOfMessageSeparator = { MessageSeparators.endOfTCPMessageSeparator };

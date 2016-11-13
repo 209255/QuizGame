@@ -6,13 +6,24 @@ using System.Text;
 
     class RoomService:IRoomService
     {
-    private List<Client> Players;
-
+    private List<Room> rooms;
+    public RoomService()
+    {
+        rooms = new List<Room>();
+    }
+ 
     public void AddPlayerToExistingRoom()
     {
-        throw new NotImplementedException();
+        
     }
-
+    public void OnNewClient(Client client)
+    {
+        foreach(var room in rooms)
+        {
+            if(room.isFull)
+                
+        }
+    }
     public void AddPlayertoNewRoom()
     {
         throw new NotImplementedException();
@@ -25,7 +36,7 @@ using System.Text;
 
     public void CreateNewRoom()
     {
-        throw new NotImplementedException();
+        ;
     }
 
     public void LeftPlayerFromRoom()

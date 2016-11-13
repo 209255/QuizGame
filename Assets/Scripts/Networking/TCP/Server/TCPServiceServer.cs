@@ -19,6 +19,16 @@ namespace Assets.Scripts.Networking
             throw new NotImplementedException();
         }
 
+        public bool Connect(string ip, int port)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Disconnect()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool RegisterCallback(MessageSubject subject, Action<IMessage> callback)
         {
             throw new NotImplementedException();

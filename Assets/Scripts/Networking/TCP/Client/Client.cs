@@ -7,7 +7,7 @@ using System.Net.Sockets;
  class Client : IClient
 {
     private ITcpClient socket;
-    private IClientCommunication communication;
+    private ICommunication communication;
     private IClientConnection connection;
 
     public string ip { get { return connection.ip; } }

@@ -5,6 +5,13 @@ using System.Text;
 
 
     public enum MessageSubject
-    {AcceptConnection
-    }
+    {
+        ClientReadyToStart,
+        ClientSendScore,
+        ServerPlayerJoin,
+        ServerAssignToRoom,
+        ServerStartGame,
+        Score,
+        ServerAcceptConnection
+}
 

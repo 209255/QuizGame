@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-    interface ITCPServiceServer:ICommunnication
+    public interface ITCPServiceServer:IServiceCommunication
     {
         void AcceptConnection();
         void AcceptDisconnection();

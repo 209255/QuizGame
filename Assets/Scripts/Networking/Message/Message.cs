@@ -8,16 +8,22 @@ public class MessageSeparators
 {
     public const char messageSeparator = ';';
     public const char endOfTCPMessageSeparator = '^';
+    public const char dataSeparator = ':';
 }
 
 class Message:IMessage
     {
     
-        public MessageSubject subject { get; private set; }
-        public string[] raw { get; private set; }
+        public MessageSubject subject { get; protected set; }
+        public string[] raw { get; protected set; }
         public int Senderid { get; set; }
     Message(byte[] data)
     {
+
+    }
+    public Message()
+    {
+
 
     }
     public Message(string msg)

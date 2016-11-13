@@ -9,7 +9,8 @@ using System.Text;
     void CreateNewRoom();
     void CloseRoom();
     void AddPlayerToExistingRoom();
-    void AddPlayertoNewRoom();
+
     void LeftPlayerFromRoom();
+    void OnNewClient(Client client);
     }
 

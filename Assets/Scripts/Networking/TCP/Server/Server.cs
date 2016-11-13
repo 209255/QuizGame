@@ -10,7 +10,7 @@ using System.Net;
     private IServerCommunication communication;
     private IServerSetUp setUp;
     public List<IClientHandler> clients;
-    public NewMessage onNewMessage { get { return communication.NewMessage; } set { communication.NewMessage = value; } }
+    public NewMessage onNewMessage { get { return communication.onNewMessage; } set { communication.onNewMessage = value; } }
     public Action<ushort> NewConnection { get { return connectionHandler.NewConnection; } set { connectionHandler.NewConnection = value; } }
 
 

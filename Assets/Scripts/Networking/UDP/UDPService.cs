@@ -4,11 +4,21 @@ using System.Linq;
 using System.Text;
 
 
-    class UDPService : ICommunnication
+    class UDPService : IClientServiceCommunication
     {
         public event Action<IMessage> Received;
 
-        public bool RegisterCallback(MessageSubject subject, Action<IMessage> callback)
+    public bool Connect(string ip, int port)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Disconnect()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool RegisterCallback(MessageSubject subject, Action<IMessage> callback)
         {
             throw new NotImplementedException();
         }

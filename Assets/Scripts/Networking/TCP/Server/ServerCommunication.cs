@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 public delegate void NewMessage(ushort id, IMessage msg);
 
 class ServerCommunication : IServerCommunication
 {
     private List<IClientHandler> clients;
     private readonly char[] endOfMessageSeparator = { MessageSeparators.endOfTCPMessageSeparator };
-    public NewMessage NewMessage { get; set; }
+    public NewMessage onNewMessage { get; set; }
+
+   
+
     public ServerCommunication(List<IClientHandler> clients)
     {
         this.clients = clients;
@@ -25,7 +27,7 @@ class ServerCommunication : IServerCommunication
                 foreach (var message in messages)
                 {
                     var messageObject = new Message(message);
-                    NewMessage(registeredClient.GetId(), messageObject);
+                    onNewMessage(registeredClient.GetId(), messageObject);
                 }
             }
         }

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 
 
-   public interface ITCPServiceClient:ICommunnication
+   public interface ITCPServiceClient:IClientServiceCommunication
     {
         string Ip { get;}
         ushort id { get; }
         int Port { get; }
-        bool Connect(string ip,int port);
-        bool Disconnect();
+      
     }
 

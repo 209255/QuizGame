@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Scripts.Networking
-{
+
     class TCPServiceClient :ITCPServiceClient
     {
         private IClient client;
@@ -76,6 +75,13 @@ namespace Assets.Scripts.Networking
                         callbackRegister.register[messageObject.subject][i](messageObject);
             }
         }
+
+   
+
+    public void Send(string message)
+    {
+        throw new NotImplementedException();
     }
 }
+
 

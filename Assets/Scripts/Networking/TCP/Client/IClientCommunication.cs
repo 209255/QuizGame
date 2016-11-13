@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-    public interface IClientCommunication
+    public interface ICommunication
     {
     string[] Read();
     void Send(string message);
