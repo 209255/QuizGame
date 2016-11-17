@@ -7,6 +7,14 @@ namespace Assets.Scripts.Networking
 {
     class BluetoothServiceClient : IBluetoothServiceClient
     {
+        public IRegister<MessageSubject, Action<IMessage>> callbackRegister
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public event Action<IMessage> Received;
 
         public bool Connect(string ip, int port)

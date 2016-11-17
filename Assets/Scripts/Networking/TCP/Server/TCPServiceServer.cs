@@ -7,6 +7,14 @@ namespace Assets.Scripts.Networking
 {
     class TCPServiceServer : ITCPServiceServer
     {
+        public IRegister<MessageSubject, Action<IMessage>> callbackRegister
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public event Action<IMessage> Received;
 
         public void AcceptConnection()

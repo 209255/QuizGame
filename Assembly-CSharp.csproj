@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{D7EF783E-1F81-FC80-230F-8503BB368E26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,76 +46,75 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\IServiceCommunication.cs" />
-     <Compile Include="Assets\MenuButtonController.cs" />
-     <Compile Include="Assets\Scripts\Category.cs" />
-     <Compile Include="Assets\Scripts\ClientConnectionControler.cs" />
-     <Compile Include="Assets\Scripts\ConnectionButtonsModel.cs" />
-     <Compile Include="Assets\Scripts\DIContainer\Bootstrapper.cs" />
-     <Compile Include="Assets\Scripts\DIContainer\DependencyResolver.cs" />
-     <Compile Include="Assets\Scripts\GameFlowController.cs" />
-     <Compile Include="Assets\Scripts\IClientConnectionController.cs" />
-     <Compile Include="Assets\Scripts\IConnectionController.cs" />
-     <Compile Include="Assets\Scripts\MenuManager.cs" />
-     <Compile Include="Assets\Scripts\MenuView\IMenuManager.cs" />
-     <Compile Include="Assets\Scripts\MenuView\Menu.cs" />
-     <Compile Include="Assets\Scripts\MenuView\QuestionMenu.cs" />
-     <Compile Include="Assets\Scripts\Networking\Bluetooth\Client\BluetoothServiceClient.cs" />
-     <Compile Include="Assets\Scripts\Networking\Bluetooth\Client\IBluetoothServiceClient.cs" />
-     <Compile Include="Assets\Scripts\Networking\Bluetooth\Server\BluetoothServiceServer.cs" />
-     <Compile Include="Assets\Scripts\Networking\Bluetooth\Server\IBluetoothServiceServer.cs" />
-     <Compile Include="Assets\Scripts\Networking\IClientServiceCommunication.cs" />
-     <Compile Include="Assets\Scripts\Networking\Message\IMessage.cs" />
-     <Compile Include="Assets\Scripts\Networking\Message\Message.cs" />
-     <Compile Include="Assets\Scripts\Networking\Message\MessageSubject.cs" />
-     <Compile Include="Assets\Scripts\Networking\Message\ScoreMsg.cs" />
-     <Compile Include="Assets\Scripts\Networking\Message\ServerAcceptConnectionMsg.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\Client.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\ClientCommunication.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\ClientConnection.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\ClientHandler.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\IClient.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\IClientCommunication.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\IClientConnection.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\IClientHandler.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\ITCPServiceClient.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Client\TCPServiceClient.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\ConnectionHandler.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\IConnectionHandler.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\IRoomService.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\IServer.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\IServerCommunication.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\IServerSetUp.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\ITCPServiceServer.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\Room.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\RoomService.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\Server.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\ServerCommunication.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\ServerSetUp.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Server\TCPServiceServer.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Utilities\ITcpClient.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Utilities\ITcpListener.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Utilities\TCPClientAdapter.cs" />
-     <Compile Include="Assets\Scripts\Networking\TCP\Utilities\TcpListener.cs" />
-     <Compile Include="Assets\Scripts\Networking\UDP\UDPService.cs" />
-     <Compile Include="Assets\Scripts\Networking\Utilities\IRegister.cs" />
-     <Compile Include="Assets\Scripts\Networking\Utilities\Register.cs" />
-     <Compile Include="Assets\Scripts\Question.cs" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="LitJson">
- <HintPath>C:/Users/Bartolomeo/Desktop/Quiz/QuizGame/Assets/LitJson.dll</HintPath>
- </Reference>
- <Reference Include="Autofac">
- <HintPath>C:/Users/Bartolomeo/Desktop/Quiz/QuizGame/Assets/Scripts/DIContainer/Autofac.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\IServiceCommunication.cs" />
+    <Compile Include="Assets\MenuButtonController.cs" />
+    <Compile Include="Assets\Scripts\Category.cs" />
+    <Compile Include="Assets\Scripts\ClientConnectionControler.cs" />
+    <Compile Include="Assets\Scripts\ConnectionButtonsModel.cs" />
+    <Compile Include="Assets\Scripts\DIContainer\Bootstrapper.cs" />
+    <Compile Include="Assets\Scripts\DIContainer\DependencyResolver.cs" />
+    <Compile Include="Assets\Scripts\GameFlowController.cs" />
+    <Compile Include="Assets\Scripts\IClientConnectionController.cs" />
+    <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\MenuView\IMenuManager.cs" />
+    <Compile Include="Assets\Scripts\MenuView\Menu.cs" />
+    <Compile Include="Assets\Scripts\MenuView\QuestionMenu.cs" />
+    <Compile Include="Assets\Scripts\Networking\Bluetooth\Client\BluetoothServiceClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\Bluetooth\Client\IBluetoothServiceClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\Bluetooth\Server\BluetoothServiceServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\Bluetooth\Server\IBluetoothServiceServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\IClientServiceCommunication.cs" />
+    <Compile Include="Assets\Scripts\Networking\Message\IMessage.cs" />
+    <Compile Include="Assets\Scripts\Networking\Message\Message.cs" />
+    <Compile Include="Assets\Scripts\Networking\Message\MessageSubject.cs" />
+    <Compile Include="Assets\Scripts\Networking\Message\ScoreMsg.cs" />
+    <Compile Include="Assets\Scripts\Networking\Message\ServerAcceptConnectionMsg.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\Client.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\ClientCommunication.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\ClientConnection.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\ClientHandler.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\IClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\IClientCommunication.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\IClientConnection.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\IClientHandler.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\ITCPServiceClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Client\TCPServiceClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\ConnectionHandler.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\IConnectionHandler.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\IRoomService.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\IServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\IServerCommunication.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\IServerSetUp.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\ITCPServiceServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\Room.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\RoomService.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\Server.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\ServerCommunication.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\ServerSetUp.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Server\TCPServiceServer.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Utilities\ITcpClient.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Utilities\ITcpListener.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Utilities\TCPClientAdapter.cs" />
+    <Compile Include="Assets\Scripts\Networking\TCP\Utilities\TcpListener.cs" />
+    <Compile Include="Assets\Scripts\Networking\UDP\UDPService.cs" />
+    <Compile Include="Assets\Scripts\Networking\Utilities\IRegister.cs" />
+    <Compile Include="Assets\Scripts\Networking\Utilities\Register.cs" />
+    <Compile Include="Assets\Scripts\Question.cs" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>C:/Users/Bartolomeo/Desktop/Quiz/QuizGame/Assets/LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>C:/Users/Bartolomeo/Desktop/Quiz/QuizGame/Assets/Scripts/DIContainer/Autofac.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -124,5 +124,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>

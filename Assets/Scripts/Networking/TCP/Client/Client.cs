@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 
- class Client : IClient
+ public class Client : IClient
 {
     private ITcpClient socket;
     private ICommunication communication;

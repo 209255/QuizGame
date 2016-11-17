@@ -18,11 +18,7 @@ using System.Text;
     }
     public void OnNewClient(Client client)
     {
-        foreach(var room in rooms)
-        {
-            if(room.isFull)
-                
-        }
+       
     }
     public void AddPlayertoNewRoom()
     {
@@ -36,7 +32,7 @@ using System.Text;
 
     public void CreateNewRoom()
     {
-        ;
+        
     }
 
     public void LeftPlayerFromRoom()

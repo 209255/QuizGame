@@ -16,7 +16,15 @@ using System.Text;
         public string Ip { get { return client.ip; } }
         public int Port { get { return client.port; } }
 
-        public TCPServiceClient()
+    IRegister<MessageSubject, Action<IMessage>> IServiceCommunication.callbackRegister
+    {
+        get
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public TCPServiceClient()
         {
             this.client = new Client();
             callbackRegister = new Register<MessageSubject, Action<IMessage>>();
