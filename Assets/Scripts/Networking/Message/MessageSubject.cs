@@ -8,6 +8,8 @@ using System.Text;
     {
         ClientReadyToStart,
         ClientSendScore,
+        ClientSendCategory,
+        ClientDisconnect,
         ServerPlayerJoin,
         ServerAssignToRoom,
         ServerStartGame,

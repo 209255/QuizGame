@@ -8,37 +8,30 @@ using System.Text;
     {
         private IClient client;
         public IRegister<MessageSubject, Action<IMessage>> callbackRegister;
-
         public event Action<IMessage> Received;
-
         public Action OnIdFromServer { get; set; }
         public ushort id { get; private set; }
         public string Ip { get { return client.ip; } }
         public int Port { get { return client.port; } }
 
-    IRegister<MessageSubject, Action<IMessage>> IServiceCommunication.callbackRegister
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public TCPServiceClient()
+        public TCPServiceClient()
         {
             this.client = new Client();
             callbackRegister = new Register<MessageSubject, Action<IMessage>>();
-           // RegisterCallback(MessageSubject.clientConnect, AccepctIdFromServer);
+            RegisterCallback(MessageSubject.ServerAcceptConnection, AccepctIdFromServer);
         }
 
         private void AccepctIdFromServer(IMessage message)
         {
-          
+        ServerAcceptConnectionMsg msg = new ServerAcceptConnectionMsg(message);
+            this.id = msg.Clientid;
+            OnIdFromServer();
         }
 
         private void NotifyMyDisconnect()
         {
-         
+            DisconnectMessage msg = new DisconnectMessage(id);
+            client.Send(msg);
         }
 
         public bool RegisterCallback(MessageSubject subject, Action<IMessage> callback)
@@ -53,9 +46,8 @@ using System.Text;
         public bool Connect(string ip, int port)
         {
             if (client.Connect(ip, port))
-            {
-              
-                return true;
+            { 
+               return true;
             }
             return false;
 
@@ -68,8 +60,7 @@ using System.Text;
 
         public void Send(IMessage msg)
         {
-           
-            client.Send(msg);
+           client.Send(msg);
         }
         private void Read()
         {
@@ -77,19 +68,12 @@ using System.Text;
             foreach (var message in messages)
             {
                 var messageObject = new Message(message);
-               
                 if (callbackRegister.register.ContainsKey(messageObject.subject))
                     for (int i = 0; i < callbackRegister.register[messageObject.subject].Count; ++i)
                         callbackRegister.register[messageObject.subject][i](messageObject);
             }
         }
 
-   
-
-    public void Send(string message)
-    {
-        throw new NotImplementedException();
-    }
 }
 
 

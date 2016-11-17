@@ -6,10 +6,10 @@ using System.Text;
 
     public interface IRoomService
     {
-    void CreateNewRoom();
-    void CloseRoom();
-    void AddPlayerToExistingRoom();
-    void LeftPlayerFromRoom();
+    void CreateNewRoom(Client client);
+    void CloseRoom(Client client);
+    void AddPlayerToExistingRoom(Client client);
+    void LeftPlayerFromRoom(Client client);
     void OnNewClient(Client client);
     }
 

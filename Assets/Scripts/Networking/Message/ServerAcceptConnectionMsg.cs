@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 
 
-    class ServerAcceptConnectionMsg:Message
+    public class ServerAcceptConnectionMsg:Message
     {
-    public ushort id { get; private set; }
+    public ushort Clientid { get; private set; }
     //tworze wiadomosc do wyslania 
     public ServerAcceptConnectionMsg(ushort id )
     {
-        this.id = id;
+        this.Clientid = id;
         this.subject = MessageSubject.ServerAcceptConnection;
     }
     // wiadomosc odbieram, nie wiem jaki typ i go parsuje 
@@ -18,11 +18,18 @@ using System.Text;
     {
         this.subject = msg.subject;
         this.raw = msg.raw;
-        this.id = ushort.Parse(raw[1]);
+        this.Clientid = ushort.Parse(raw[1]);
     }
     public override string GetData()
     {
-        return id.ToString();
+        return Clientid.ToString();
     }
 }
-
+public class DisconnectMessage : ServerAcceptConnectionMsg
+{
+    public DisconnectMessage(ushort clientID) : base(clientID)
+    {
+        this.subject = MessageSubject.ClientDisconnect;
+    }
+    public DisconnectMessage(IMessage msg) : base(msg) { }
+}
