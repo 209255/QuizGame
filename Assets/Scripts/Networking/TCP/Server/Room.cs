@@ -6,7 +6,7 @@ using System.Text;
 
     class Room
     {
-        List<Client> clients;
+        readonly List<Client> clients;
         public string Category { get; private set; }
         public bool isFull { get; private set; }
         public Room()

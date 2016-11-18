@@ -6,7 +6,7 @@ using System.Text;
 
     public interface IRoomService
     {
-    void CreateNewRoom(Client client);
+    void CreateNewRoom();
     void CloseRoom(Client client);
     void AddPlayerToExistingRoom(Client client);
     void LeftPlayerFromRoom(Client client);

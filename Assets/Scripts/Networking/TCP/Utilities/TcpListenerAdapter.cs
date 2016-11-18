@@ -4,7 +4,7 @@ using System.Net.Sockets;
 
 
 
-    public class TcpListener:ITcpListener
+    public class TcpListenerAdapter:ITcpListener
     {
         TcpListener client;
 
@@ -12,15 +12,15 @@ using System.Net.Sockets;
         {
             get
             {
-                throw new NotImplementedException();
+            return client.Server.IsBound;
             }
         }
 
-        public TcpListener(IPAddress ip, int port)
+        public TcpListenerAdapter(IPAddress ip, int port)
         {
             client = new TcpListener(ip, port);
         }
-        //public bool IsBound { get { return client..IsBound; } }
+        
         public void Stop()
         {
             client.Stop();

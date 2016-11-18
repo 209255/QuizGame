@@ -18,7 +18,7 @@ using System.Net;
 
     public Server(int port = 8000)
     {
-        socket = new TcpListener(IPAddress.Any, port);
+        socket = new TcpListenerAdapter(IPAddress.Any, port);
         clients = new List<IClientHandler>();
         connectionHandler = new ConnectionHandler(socket, clients);
         communication = new ServerCommunication(clients);

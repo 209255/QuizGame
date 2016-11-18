@@ -11,6 +11,7 @@ using System.Text;
     {
         communication.RegisterCallback(MessageSubject.ServerAssignToRoom,OnAssignToRoom);
         communication.RegisterCallback(MessageSubject.Score, OnScoreReceive);
+        communication.RegisterCallback(MessageSubject.ClientSendCategory, OnCategoryReceive);
     }
     
     void ReadyToStart()
@@ -36,6 +37,10 @@ using System.Text;
     void OnScoreReceive(IMessage msg)
     {
         ScoreMsg message = new ScoreMsg(msg);
+    }
+    void OnCategoryReceive(IMessage msg)
+    {
+        CategoryMsg message = new CategoryMsg(msg);
     }
     void OnCreateRoom(IMessage msg)
     {

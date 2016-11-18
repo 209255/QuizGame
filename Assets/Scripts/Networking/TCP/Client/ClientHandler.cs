@@ -5,7 +5,7 @@ using System.Text;
 
     public class ClientHandler : IClientHandler
     {
-        public static ushort idEnumerator = 1; // VoiceChat chce od 1
+        public static ushort idEnumerator = 1; 
         private TcpClient client;
         public ushort id;
 

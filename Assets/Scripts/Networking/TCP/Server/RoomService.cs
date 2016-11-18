@@ -12,7 +12,7 @@ using System.Text;
         rooms = new List<Room>();
     }
  
-    public void AddPlayerToExistingRoom()
+    public void AddPlayerToExistingRoom(Client client)
     {
         
     }
@@ -20,24 +20,26 @@ using System.Text;
     {
        
     }
-    public void AddPlayertoNewRoom()
+    public void AddPlayertoNewRoom(Client client)
     {
-        throw new NotImplementedException();
+        CreateNewRoom();
+        rooms[1].AddClient(client);
     }
 
-    public void CloseRoom()
+    public void CloseRoom(Client client)
     {
-        throw new NotImplementedException();
+       
     }
 
     public void CreateNewRoom()
     {
-        
+        rooms.Insert(1, new Room());
     }
 
-    public void LeftPlayerFromRoom()
+    public void LeftPlayerFromRoom(Client client)
     {
-        throw new NotImplementedException();
+        foreach (var room in rooms)
+            ;
     }
 }
 

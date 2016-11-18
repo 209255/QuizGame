@@ -23,7 +23,7 @@ using System.Text;
 
         private void AccepctIdFromServer(IMessage message)
         {
-        ServerAcceptConnectionMsg msg = new ServerAcceptConnectionMsg(message);
+            ServerAcceptConnectionMsg msg = new ServerAcceptConnectionMsg(message);
             this.id = msg.Clientid;
             OnIdFromServer();
         }

@@ -54,7 +54,6 @@ public class ConnectionHandler : IConnectionHandler
             var handler = newClients.Dequeue();
             clients.Add(handler);
             NewConnection(handler.id);
-            //  Log.Print(LogTag.TCPServer, "New Client: " + handler.id);
         }
     }
 }
