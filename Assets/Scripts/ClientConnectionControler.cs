@@ -22,7 +22,13 @@ class ClientConnectionControler : IClientConnectionController
     {
         
     }
-     public void OnTCPSelected()
+
+    public void OnOfflineSelected()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnTCPSelected()
     {
         client = new TCPServiceClient();
         client.Connect(ip,port);

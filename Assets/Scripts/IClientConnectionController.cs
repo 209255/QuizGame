@@ -10,6 +10,7 @@ using System.Text;
     void OnTCPSelected();
     void OnUDPSelected();
     void OnBluetoothSelected();
+    void OnOfflineSelected();
 
 
 }

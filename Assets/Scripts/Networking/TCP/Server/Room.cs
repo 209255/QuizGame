@@ -6,21 +6,27 @@ using System.Text;
 
     class Room
     {
-        readonly List<Client> clients;
+        public List<Player> clients { get; private set; }
         public string Category { get; private set; }
         public bool isFull { get; private set; }
         public Room()
         {
-            clients = new List<Client>();
+            clients = new List<Player>();
         }
 
-        public void AddClient(Client client)
+        public void AddClient(ushort playerID)
         {
-            clients.Add(client);
+            clients.Add(new Player(playerID));
         }
-        public void RemoveClient(Client client)
+        public void RemoveClient(ushort playerID)
         {
-            clients.Remove(client);
+            
+            clients.Remove(clients.Single(cl =>cl.PlayerId == playerID ));
+        }
+        public Player GetIfContainsPlayerInRoom(ushort playerId)
+        {
+                // zrobic ss do inzynierki
+            return clients.FirstOrDefault(client => client.PlayerId == playerId);
         }
     }
 

@@ -14,6 +14,10 @@ using System.Text;
         ServerAssignToRoom,
         ServerStartGame,
         Score,
-        ServerAcceptConnection
+        ServerAcceptConnection,
+        PlayerAskedToJoinGame,
+        ServerPlayerJoinToYourRoom ,
+        ClosedRoom
+
 }
 

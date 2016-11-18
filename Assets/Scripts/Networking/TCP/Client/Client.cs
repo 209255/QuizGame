@@ -12,10 +12,7 @@ using System.Net.Sockets;
 
     public string ip { get { return connection.ip; } }
     public int port { get { return connection.port; } }
-    public bool isReady { get; private set; }
-    public bool isHost { get; private set; }
-    public int score { get; private set;}
-
+    
 
     public Client()
     {

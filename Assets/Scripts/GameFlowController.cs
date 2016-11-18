@@ -11,7 +11,10 @@ using System.Text;
     {
         communication.RegisterCallback(MessageSubject.ServerAssignToRoom,OnAssignToRoom);
         communication.RegisterCallback(MessageSubject.Score, OnScoreReceive);
-        communication.RegisterCallback(MessageSubject.ClientSendCategory, OnCategoryReceive);
+        communication.RegisterCallback(MessageSubject.ServerStartGame, OnStartGame);
+        communication.RegisterCallback(MessageSubject.ServerPlayerJoin,OnPlayerJoin);
+        communication.RegisterCallback(MessageSubject.ServerAssignToRoom, OnAssignToRoom);
+
     }
     
     void ReadyToStart()
@@ -22,7 +25,11 @@ using System.Text;
     {
 
     }
-    void OnPlayerJoin()
+    void SendCategory()
+    {
+
+    }
+    void OnPlayerJoin(IMessage msg)
     {
 
     }
@@ -32,7 +39,7 @@ using System.Text;
     }
     void OnStartGame(IMessage msg)
     {
-
+        ServerStartGame message = new ServerStartGame(msg);
     }
     void OnScoreReceive(IMessage msg)
     {
@@ -44,7 +51,7 @@ using System.Text;
     }
     void OnCreateRoom(IMessage msg)
     {
-
+        ServerOnCreateRoom message = new ServerOnCreateRoom(msg);
     }
 
     public GameFlowController(IClientServiceCommunication com)

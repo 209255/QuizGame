@@ -11,7 +11,7 @@ namespace Assets.Scripts.Networking
 
         public void AcceptConnection()
         {
-            throw new NotImplementedException();
+          
         }
 
         public void AcceptDisconnection()
