@@ -1,7 +1,5 @@
 ﻿using System;
 
-
-
     class TCPServiceServer : ITCPServiceServer
     {
 
