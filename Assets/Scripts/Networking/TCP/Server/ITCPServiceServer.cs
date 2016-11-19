@@ -8,8 +8,8 @@ using System.Text;
     {
     void Broadcast(IMessage msg);
     void ExecuteCallbacks(ushort id, IMessage message);
-    void RegisterCallback(MessageSubject subject, Action<ushort,IMessage> callback);
-    void UnregisterCallback(MessageSubject subject, Action<ushort,IMessage> callback);
+    void RegisterCallback(MessageSubject subject, Action<IMessage> callback);
+    void UnregisterCallback(MessageSubject subject, Action<IMessage> callback);
     void SendTo(ushort id, IMessage msg);
     void SendToOthers(ushort id, IMessage msg);
     void Start();

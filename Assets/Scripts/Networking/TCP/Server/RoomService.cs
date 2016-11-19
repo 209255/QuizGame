@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
-
-    class RoomService:IRoomService
+    public class RoomService:IRoomService
     {
     private List<Room> rooms;
     ITCPServiceServer communication;
@@ -13,10 +9,8 @@ using System.Text;
         communication.RegisterCallback(MessageSubject.ServerAssignToRoom, OnAskedForJoinGame);
     }
     public RoomService()
-
     {
         rooms = new List<Room>();
-   
     }
  
     public void AddPlayerToExistingRoom(ushort playerId,Room room)
@@ -26,8 +20,6 @@ using System.Text;
         room.AddClient(playerId);
         ServerPlayerJoinToYourRoom message = new ServerPlayerJoinToYourRoom(room.clients[0].PlayerId);
         communication.SendTo(playerId, message);
-       
-
     }
     public void OnAskedForJoinGame(IMessage message)
     {
@@ -66,14 +58,40 @@ using System.Text;
         if(roomToDelete.isFull)
         {
             foreach (Player players in roomToDelete.clients)
+            {
                 communication.SendTo(players.PlayerId, msg);
-
+                roomToDelete.RemoveClient(players.PlayerId);
+            }
         }
     }
 
    
-    public void LeftPlayerFromRoom()
+    public void LeftPlayerFromRoom(ushort playerLeftId)
     {
+        PlayerLeftRoom msg = new PlayerLeftRoom();
+        Room roomPlayer = null;
+        Player leavingPlayer = null;
+        foreach (var room in rooms)
+        {
+            leavingPlayer = room.GetIfContainsPlayerInRoom(playerLeftId);
+            if (leavingPlayer != null)
+                roomPlayer = room;
+        }
+          
+        if (leavingPlayer != null && leavingPlayer.isHost == true)
+        {
+            foreach (var players in roomPlayer.clients)
+            {
+                communication.SendTo(players.PlayerId, msg);
+                roomPlayer.RemoveClient(players.PlayerId);
+            }
+            CloseRoom(playerLeftId);
+        }
+        if (leavingPlayer != null && leavingPlayer.isHost == false)
+        {
+            roomPlayer.RemoveClient(playerLeftId);
+            communication.SendTo(roomPlayer.clients[0].PlayerId, msg);
+        }
         
     }
 }

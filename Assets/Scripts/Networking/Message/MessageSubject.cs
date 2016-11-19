@@ -17,6 +17,7 @@ using System.Text;
         ServerAcceptConnection,
         PlayerAskedToJoinGame,
         ServerPlayerJoinToYourRoom ,
+        PlayerLeftRoom,
         ClosedRoom
 
 }

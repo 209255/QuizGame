@@ -8,7 +8,7 @@
     void RemoveClient(ushort id);
     void Read();
     void Broadcast(IMessage msg);
-    void SendToOthers(ushort Id, IMessage);
+    void SendToOthers(ushort Id, IMessage msg);
     void SendTo(ushort id, IMessage msg);
     void Start();
     void Stop();

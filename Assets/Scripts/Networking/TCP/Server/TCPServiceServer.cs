@@ -3,13 +3,13 @@
     class TCPServiceServer : ITCPServiceServer
     {
 
-        IRegister<MessageSubject, Action<ushort, IMessage>> callbackRegister;
+        IRegister<MessageSubject, Action<IMessage>> callbackRegister;
         IServer server;
         public TCPServiceServer(IServer server)
         {
             this.server = server;
             server.NewConnection += AssignId;
-            callbackRegister = new Register<MessageSubject, Action<ushort, IMessage>>();
+            callbackRegister = new Register<MessageSubject, Action<IMessage>>();
             server.NewMessage += ExecuteCallbacks;
         }
         
@@ -29,14 +29,14 @@
         {
             if (callbackRegister.register.ContainsKey(message.subject))
                 foreach (var action in callbackRegister.register[message.subject])
-                    action(id, message);
+                    action(message);
         }
 
-        public void RegisterCallback(MessageSubject subject, Action<ushort,IMessage> callback)
+        public void RegisterCallback(MessageSubject subject, Action<IMessage> callback)
         {
             callbackRegister.RegisterObject(subject, callback);
         }
-        public void UnregisterCallback(MessageSubject subject, Action<ushort,IMessage> callback)
+        public void UnregisterCallback(MessageSubject subject, Action<IMessage> callback)
         {
         callbackRegister.UnregisterObject(subject, callback);
         }

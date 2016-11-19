@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-    class Room
+   public class Room
     {
         public List<Player> clients { get; private set; }
         public string Category { get; private set; }
@@ -17,16 +17,23 @@ using System.Text;
         public void AddClient(ushort playerID)
         {
             clients.Add(new Player(playerID));
+            if (clients.Count == 1)
+                clients[0].isHost = true;
+            if (clients.Count == 2)
+             isFull = true;
         }
         public void RemoveClient(ushort playerID)
         {
-            
-            clients.Remove(clients.Single(cl =>cl.PlayerId == playerID ));
+           clients.Remove(clients.Single(cl =>cl.PlayerId == playerID ));
+            if (clients.Count == 1)
+              isFull = false;
         }
         public Player GetIfContainsPlayerInRoom(ushort playerId)
         {
                 // zrobic ss do inzynierki
             return clients.FirstOrDefault(client => client.PlayerId == playerId);
         }
+       
+        
     }
 

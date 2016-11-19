@@ -6,10 +6,11 @@ using System.Text;
 
     public interface IRoomService
     {
-    void CreateNewRoom();
-    void CloseRoom(Client client);
-    void AddPlayerToExistingRoom(Client client);
-    void LeftPlayerFromRoom(Client client);
-    void OnNewClient(Client client);
+
+    void CloseRoom(ushort client);
+    void AddPlayerToExistingRoom(ushort playerId, Room room);
+    void LeftPlayerFromRoom(ushort playerLeftId);
+
+    void OnAskedForJoinGame(IMessage message);
     }
 
