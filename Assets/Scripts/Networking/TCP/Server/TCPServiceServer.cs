@@ -1,52 +1,82 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Assets.Scripts.Networking
-{
+
+
     class TCPServiceServer : ITCPServiceServer
     {
-        public event Action<IMessage> Received;
 
-        public void AcceptConnection()
+        IRegister<MessageSubject, Action<ushort, IMessage>> callbackRegister;
+        IServer server;
+        public TCPServiceServer(IServer server)
         {
-          
+            this.server = server;
+            server.NewConnection += AssignId;
+            callbackRegister = new Register<MessageSubject, Action<ushort, IMessage>>();
+            server.NewMessage += ExecuteCallbacks;
         }
-
-        public void AcceptDisconnection()
+        
+        private void onDisconnect(ushort clientId, IMessage message)
         {
-            throw new NotImplementedException();
+            DisconnectMessage msg = new DisconnectMessage(message);
+            server.RemoveClient(msg.Clientid);
+            SendToOthers(msg.Clientid, msg);
+            // Log.Print("Klient" + msg.clientId + "opuscil server");
         }
-
         public bool Connect(string ip, int port)
         {
             throw new NotImplementedException();
         }
 
-        public bool Disconnect()
+        public void ExecuteCallbacks(ushort id, IMessage message)
         {
-            throw new NotImplementedException();
+            if (callbackRegister.register.ContainsKey(message.subject))
+                foreach (var action in callbackRegister.register[message.subject])
+                    action(id, message);
         }
 
-        public bool RegisterCallback(MessageSubject subject, Action<IMessage> callback)
+        public void RegisterCallback(MessageSubject subject, Action<ushort,IMessage> callback)
         {
-            throw new NotImplementedException();
+            callbackRegister.RegisterObject(subject, callback);
         }
-
-        public void Send()
+        public void UnregisterCallback(MessageSubject subject, Action<ushort,IMessage> callback)
         {
-            throw new NotImplementedException();
+        callbackRegister.UnregisterObject(subject, callback);
         }
-
-        public void Send(IMessage msg)
+        public void Broadcast(IMessage msg)
         {
-            throw new NotImplementedException();
+            server.Broadcast(msg);
         }
-
-        public bool UnregisterCallback(MessageSubject subject, Action<IMessage> callback)
+        public void SendTo(ushort id, IMessage msg)
         {
-            throw new NotImplementedException();
+            server.SendTo(id, msg);
         }
-    }
+        public void SendToOthers(ushort id, IMessage msg)
+        {
+            server.SendToOthers(id, msg);
+        }
+        public void Start()
+        {
+            server.Start();
+            /// Log.Print("Serwer wystartował");
+        }
+        public void Stop()
+        {
+            server.Stop();
+            //Log.Print("Serwer został wyłączony");
+        }
+        public void RemoveClient(ushort id)
+        {
+            server.RemoveClient(id);
+        }
+        private void Read()
+        {
+            server.Read();
+        }
+        private void AssignId(ushort clientId)
+        {
+            ServerAcceptConnectionMsg msg = new ServerAcceptConnectionMsg(clientId);
+            server.SendTo(clientId, msg);
+            //  Log.Print("Pojawił się nowy klient o id : " + clientId);
+        }
 }
+
