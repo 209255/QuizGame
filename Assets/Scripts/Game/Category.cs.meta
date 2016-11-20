@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 5d410d3d88abad24cbcaa2dffcad9919
-timeCreated: 1477063965
+timeCreated: 1479650445
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - katPrefab: {fileID: 1000011989603364, guid: cdadb21903bc2b644a714f56e6a47b67,
+      type: 2}
+  - question: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

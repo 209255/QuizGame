@@ -31,15 +31,16 @@ using System.Text;
     }
     void OnPlayerJoin(IMessage msg)
     {
-
+        ServerPlayerJoinToYourRoom message = new ServerPlayerJoinToYourRoom(msg);
     }
     void OnAssignToRoom(IMessage msg)
     {
-
+        ServerAssignToRoom message = new ServerAssignToRoom(msg);
     }
     void OnStartGame(IMessage msg)
     {
         ServerStartGame message = new ServerStartGame(msg);
+        
     }
     void OnScoreReceive(IMessage msg)
     {

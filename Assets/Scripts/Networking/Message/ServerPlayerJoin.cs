@@ -11,8 +11,7 @@ using System.Text;
         public ServerPlayerJoin(ushort Clientid)
         {
             this.Clientid = Clientid;
-
-        this.subject = MessageSubject.ServerPlayerJoin;
+            this.subject = MessageSubject.ServerPlayerJoin;
         }
         public ServerPlayerJoin(IMessage msg)
         {

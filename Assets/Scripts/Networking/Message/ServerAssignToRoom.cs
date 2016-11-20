@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 
 
-    class ServerJoinToRoom:Message
+    class ServerAssignToRoom:Message
     {
     public ushort Clientid { get; private set; }
-    public ServerJoinToRoom(ushort Clientid)
+    public ServerAssignToRoom(ushort Clientid)
     {
         this.Clientid = Clientid;
         this.subject = MessageSubject.ServerPlayerJoin;
     }
-    public ServerJoinToRoom(IMessage msg)
+    public ServerAssignToRoom(IMessage msg)
     {
         this.subject = msg.subject;
         this.raw = msg.raw;

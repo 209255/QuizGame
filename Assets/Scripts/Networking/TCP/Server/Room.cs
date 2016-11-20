@@ -33,7 +33,7 @@ using System.Text;
                 // zrobic ss do inzynierki
             return clients.FirstOrDefault(client => client.PlayerId == playerId);
         }
-       
+          
         
     }
 
