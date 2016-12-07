@@ -3,9 +3,10 @@ using Autofac;
 
 public class Bootstrapper : MonoBehaviour {
 
-    void Awake() {
+    void Awake()
+    {
         var builder = new ContainerBuilder();
         builder.RegisterType<MenuManager>().As<IMenuManager>().SingleInstance();
         DependencyResolver.Container = builder.Build();
-        }
+    }
 }

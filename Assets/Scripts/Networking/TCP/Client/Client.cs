@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net.Sockets;
-
- public class Client : IClient
+﻿ public class Client : IClient
 {
     private ITcpClient socket;
     private IClientCommunication communication;

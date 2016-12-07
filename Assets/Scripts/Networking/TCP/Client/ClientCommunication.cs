@@ -11,7 +11,6 @@ using System.Text;
         {
             this.socket = socket;
         }
-
         public string[] Read()
         {
             NetworkStream stream = socket.GetStream();

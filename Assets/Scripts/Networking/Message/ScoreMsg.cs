@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-
-    class ScoreMsg:Message
+﻿    class ScoreMsg:Message
     {
     public ushort Clientid { get; private set; }
     public int ClientScore { get; private set; }

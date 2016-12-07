@@ -10,7 +10,7 @@ class ClientConnectionControler : IClientConnectionController
     public ClientConnectionControler(ConnectionButtonsModel connectionButtonsModel)
     {
         this.connectionButtonsModel = connectionButtonsModel;
-        connectionButtonsModel.UDPButton.onClick.AddListener(OnUDPSelected);
+      
         connectionButtonsModel.TCPButton.onClick.AddListener(OnTCPSelected);
         connectionButtonsModel.BluetoothButton.onClick.AddListener(OnBluetoothSelected);
     }

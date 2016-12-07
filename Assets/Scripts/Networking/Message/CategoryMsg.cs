@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-
-    class CategoryMsg:Message
+﻿    class CategoryMsg:Message
     {
         public ushort Clientid { get; private set; }
         public string ClientCategory { get; private set; }

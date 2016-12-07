@@ -13,8 +13,7 @@ public class MessageSeparators
 
 public class Message:IMessage
     {
-    
-        public MessageSubject subject { get; protected set; }
+       public MessageSubject subject { get; protected set; }
         public string[] raw { get; protected set; }
         public int Senderid { get; set; }
   

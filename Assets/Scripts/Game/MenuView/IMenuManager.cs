@@ -1,6 +1,7 @@
-﻿public interface IMenuManager
-{
-    void BackToMainMenu();
-    void RegisterMainMenu(Menu mainMenu);
-    void ShowMenu(Menu menu);
-}
+﻿
+    public interface IMenuManager
+    {
+        void BackToMainMenu();
+        void RegisterMainMenu(Menu mainMenu);
+        void ShowMenu(Menu menu);
+    }
