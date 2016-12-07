@@ -7,7 +7,7 @@ class ConnectionButtonsModel:MonoBehaviour
         public Button UDPButton;
         public Button BluetoothButton;
         public Button OfflineButton;
-        private IClientConnectionController controler;
+        public IClientConnectionController controler { get; private set; }
 
     void Start()
     {

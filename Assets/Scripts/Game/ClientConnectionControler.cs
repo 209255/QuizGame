@@ -7,10 +7,12 @@ class ClientConnectionControler : IClientConnectionController
     private ConnectionButtonsModel connectionButtonsModel;
     private string ip;
     private int port;
+    public IGameFlowController gameFlowController { get; private set; }
+    
     public ClientConnectionControler(ConnectionButtonsModel connectionButtonsModel)
     {
         this.connectionButtonsModel = connectionButtonsModel;
-      
+        connectionButtonsModel.OfflineButton.onClick.AddListener(OnOfflineSelected);
         connectionButtonsModel.TCPButton.onClick.AddListener(OnTCPSelected);
         connectionButtonsModel.BluetoothButton.onClick.AddListener(OnBluetoothSelected);
     }
@@ -25,7 +27,7 @@ class ClientConnectionControler : IClientConnectionController
 
     public void OnOfflineSelected()
     {
-        throw new NotImplementedException();
+        gameFlowController = new GameOfflineController();
     }
 
     public void OnTCPSelected()

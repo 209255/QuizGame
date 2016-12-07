@@ -6,5 +6,6 @@
     void OnUDPSelected();
     void OnBluetoothSelected();
     void OnOfflineSelected();
+    IGameFlowController gameFlowController { get; }
 }
 

@@ -2,16 +2,18 @@
 using UnityEngine.UI;
 using Autofac;
 using System.IO;
-public class Category : MonoBehaviour {
+public class CategoryContainer : MonoBehaviour {
 
 
     public GameObject katPrefab;
     public MenuManager menu;
     public Question question;
+    private IClientConnectionController clientController;
 
 	void Start () {
 
         RectTransform rect = gameObject.GetComponent<RectTransform>();
+        clientController = GameObject.FindObjectOfType<ConnectionButtonsModel>().controler;
         string filePath = Application.streamingAssetsPath;
         DirectoryInfo dir = new DirectoryInfo(filePath);
         FileInfo[] files = dir.GetFiles("*.json");
@@ -28,6 +30,7 @@ public class Category : MonoBehaviour {
 	}
     public void OnClick(string category)
     {
-        question.QuestionBegin(category);
+        clientController.gameFlowController.OnCategorySelected(category);
+        
     }
 }

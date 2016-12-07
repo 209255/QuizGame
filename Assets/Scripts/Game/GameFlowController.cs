@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-   class GameFlowController
+   class GameFlowController:IGameFlowController
     {
     private IClientServiceCommunication communication;
     private void RegisterAction()
@@ -53,6 +53,11 @@ using System.Text;
     void OnCreateRoom(IMessage msg)
     {
         ServerOnCreateRoom message = new ServerOnCreateRoom(msg);
+    }
+
+    public void OnCategorySelected(string category)
+    {
+        throw new NotImplementedException();
     }
 
     public GameFlowController(IClientServiceCommunication com)
