@@ -5,8 +5,8 @@
 class ClientConnectionControler : IClientConnectionController
 {
     private ConnectionButtonsModel connectionButtonsModel;
-    private string ip;
-    private int port;
+    private string ip = "192.168.1.104";
+    private int port = 8000;
     public IGameFlowController gameFlowController { get; private set; }
     
     public ClientConnectionControler(ConnectionButtonsModel connectionButtonsModel)
@@ -15,6 +15,7 @@ class ClientConnectionControler : IClientConnectionController
         connectionButtonsModel.OfflineButton.onClick.AddListener(OnOfflineSelected);
         connectionButtonsModel.TCPButton.onClick.AddListener(OnTCPSelected);
         connectionButtonsModel.BluetoothButton.onClick.AddListener(OnBluetoothSelected);
+
     }
     public IClientServiceCommunication client
     {
@@ -34,6 +35,7 @@ class ClientConnectionControler : IClientConnectionController
     {
         client = new TCPServiceClient();
         client.Connect(ip,port);
+        gameFlowController = new GameFlowController(client);
     }
     public void OnUDPSelected()
     {

@@ -6,7 +6,7 @@
         {
             this.Clientid = Clientid;
             this.ClientCategory = ClientCategory;
-            this.subject = MessageSubject.Score;
+            this.subject = MessageSubject.ClientSendCategory;
         }
         public CategoryMsg(IMessage msg)
         {

@@ -1,26 +1,109 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-    public class RoomService:IRoomService
+public class RoomService:IRoomService
     {
     private List<Room> rooms;
     ITCPServiceServer communication;
+    
+
     private void RegisterAction()
     {
         communication.RegisterCallback(MessageSubject.ServerAssignToRoom, OnAskedForJoinGame);
+        communication.RegisterCallback(MessageSubject.ClientSendCategory, OnCategoryReceived);
+        communication.RegisterCallback(MessageSubject.ClientReadyToStart, OnClientReady);
+        communication.RegisterCallback(MessageSubject.ClientSendScore, OnScoreReceived);
     }
+
+    private void OnScoreReceived(IMessage msg)
+    {
+        ScoreMsg message = new ScoreMsg(msg);
+        ushort id = message.Clientid;
+        Room room = FindRoomWithPlayer(id);
+        if (room != null)
+        {
+            room.GetIfContainsPlayerInRoom(id).score = message.ClientScore;
+        }
+        if (room.AllClientsAnswered())
+            SendScore(room);
+            
+
+    }
+
+    private void SendScore(Room room)
+    {
+        ScoreMsg message = new ScoreMsg(room.clients[0].PlayerId,room.clients[0].score);
+        communication.SendTo(room.clients[1].PlayerId, message);
+
+        message = new ScoreMsg(room.clients[1].PlayerId, room.clients[1].score);
+        communication.SendTo(room.clients[0].PlayerId, message);
+
+    }
+
+    private Room FindRoomWithPlayer(ushort id)
+    {
+        foreach(Room rom in rooms)
+        {
+            if (rom.GetIfContainsPlayerInRoom(id)!=null)
+                return rom;
+        }
+        return null;
+    }
+    private void OnClientReady(IMessage msg)
+    {
+        ReadyToStartMsg message = new ReadyToStartMsg(msg);
+        ushort id = message.Clientid;
+        Room room = FindRoomWithPlayer(id);
+        if (room != null)
+        {
+            room.GetIfContainsPlayerInRoom(id).isReady = true;
+        }
+        if (room.AllClientsReady())
+            SendStartGame(room);
+
+    }
+
+    private void SendStartGame(Room room)
+    {
+        ServerStartGame message = new ServerStartGame(0, room.Category);
+        foreach (Player player in room.clients)
+            communication.SendTo(player.PlayerId, message);
+    }
+
+    private void OnCategoryReceived(IMessage msg)
+    {
+        CategoryMsg message = new CategoryMsg(msg);
+        ushort id = message.Clientid;
+        Room room = FindRoomWithPlayer(id);
+        if (room != null)
+        {
+            room.Category = message.ClientCategory;
+        }
+
+    }
+
     public RoomService()
     {
-        rooms = new List<Room>();
+      
     }
- 
+
+    public RoomService(ITCPServiceServer communication)
+    {
+        rooms = new List<Room>();
+        this.communication = communication; 
+
+        
+    }
+
     public void AddPlayerToExistingRoom(ushort playerId,Room room)
     {
-        ServerPlayerJoin msg = new ServerPlayerJoin(playerId);
-        communication.SendTo(room.clients[0].PlayerId, msg);
-        room.AddClient(playerId);
         ServerPlayerJoinToYourRoom message = new ServerPlayerJoinToYourRoom(room.clients[0].PlayerId);
-        communication.SendTo(playerId, message);
-    }
+        communication.SendTo(room.clients[0].PlayerId, message);
+        room.AddClient(playerId);
+        ServerAssignToRoom msg = new ServerAssignToRoom(playerId);
+        communication.SendTo(playerId, msg);
+     }
+
     public void OnAskedForJoinGame(IMessage message)
     {
         PlayerAskedToJoinGame msg = new PlayerAskedToJoinGame(message);
@@ -40,8 +123,10 @@
 
     public void AddPlayertoNewRoom(ushort client)
     {
+        ServerOnCreateRoom message = new ServerOnCreateRoom(client);
         rooms.Add(new Room());
         rooms[rooms.Count].AddClient(client);
+        communication.SendTo(client, message);
     }
 
     public void CloseRoom(ushort playerId)

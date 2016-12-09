@@ -8,9 +8,6 @@ class ServerCommunication : IServerCommunication
     private List<IClientHandler> clients;
     private readonly char[] endOfMessageSeparator = { MessageSeparators.endOfTCPMessageSeparator };
     public NewMessage onNewMessage { get; set; }
-
-   
-
     public ServerCommunication(List<IClientHandler> clients)
     {
         this.clients = clients;

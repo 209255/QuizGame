@@ -6,14 +6,14 @@ using System.Net;
 
     public class Server:IServer
     {
+  
+
     private IConnectionHandler connectionHandler;
     private IServerCommunication communication;
     private IServerSetUp setUp;
     public List<IClientHandler> clients;
     public NewMessage NewMessage { get { return communication.onNewMessage; } set { communication.onNewMessage = value; } }
     public Action<ushort> NewConnection { get { return connectionHandler.NewConnection; } set { connectionHandler.NewConnection = value; } }
-
-
     private ITcpListener socket;
 
     public Server(int port = 8000)
@@ -23,6 +23,7 @@ using System.Net;
         connectionHandler = new ConnectionHandler(socket, clients);
         communication = new ServerCommunication(clients);
         setUp = new ServerSetUp(socket);
+        
     }
 
     public void Start()

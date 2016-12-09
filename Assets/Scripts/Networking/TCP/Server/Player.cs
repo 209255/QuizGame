@@ -12,7 +12,9 @@ using System.Text;
         public ushort PlayerId { get; private set; }
         public Player(ushort id)
         {
-             PlayerId = id;
+            PlayerId = id;
+            score = -1;
+            isReady = false;
 
         }
     }

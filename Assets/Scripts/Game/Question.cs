@@ -3,15 +3,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Question : MonoBehaviour {
-    private int score;
+    public int score { get; private set; }
     private QuestionMenu questionMenu;
-  
+    private IClientConnectionController clientController;
 
     void Start()
     {
         questionMenu = FindObjectOfType<QuestionMenu>();
         questionMenu.CorrenctAnswer += Answered;
-        
+        clientController = GameObject.FindObjectOfType<ConnectionButtonsModel>().controler;
+       
+
     }
 
     private void Answered(bool isCorrect)
@@ -34,13 +36,26 @@ public class Question : MonoBehaviour {
         {
             if (!questionMenu.ShowNextQuestion())
             {
-                IMenuManager menuResult = DependencyResolver.Container.Resolve<IMenuManager>();
-                menuResult.ShowMenu(GameObject.Find("Result").GetComponent<Menu>());
-                GameObject.Find("Score").GetComponent<Text>().text = score.ToString() + "/" + questionMenu.QuestionNum;
+               
+                clientController.gameFlowController.OnFinishQuestions();
             }
         }
     }
-
+    public void ShowResult(int oponentScore = 0)
+    {
+        IMenuManager menuResult = DependencyResolver.Container.Resolve<IMenuManager>();
+        menuResult.ShowMenu(GameObject.Find("Result").GetComponent<Menu>());
+        GameObject.Find("Score").GetComponent<Text>().text = score.ToString() + "/" + questionMenu.QuestionNum;
+        if (oponentScore != 0)
+        {
+            if (score > oponentScore)
+            {
+                GameObject.Find("WinOrLoose").GetComponent<Text>().text = "You Win!" + "\n Yours Opponent score was: " + oponentScore.ToString(); ;
+            }
+            else
+                GameObject.Find("WinOrLoose").GetComponent<Text>().text = "You Loose!" + "\n Yours Opponent score was: " + oponentScore.ToString(); ;
+        }
+    }
     void OnDestroy()
     {
         if (questionMenu != null)

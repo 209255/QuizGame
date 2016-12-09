@@ -10,7 +10,7 @@ using System.Text;
     public PlayerAskedToJoinGame(ushort Clientid)
     {
         this.Clientid = Clientid;
-        this.subject = MessageSubject.Score;
+        this.subject = MessageSubject.PlayerAskedToJoinGame;
     }
     public PlayerAskedToJoinGame(IMessage msg)
     {

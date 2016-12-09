@@ -10,7 +10,7 @@ using System.Text;
         public ServerOnCreateRoom(ushort Clientid)
         {
             this.Clientid = Clientid;
-            this.subject = MessageSubject.Score;
+            this.subject = MessageSubject.ServerCreateRoom;
         }
         public ServerOnCreateRoom(IMessage msg)
         {

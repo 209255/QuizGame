@@ -15,6 +15,5 @@ using System.Text;
     void Start();
     void Stop();
     void RemoveClient(ushort id);
-    
     }
 

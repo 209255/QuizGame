@@ -7,5 +7,6 @@ using System.Text;
     public interface IGameFlowController
     {
         void OnCategorySelected(string category);
+        void OnFinishQuestions();
     }
 

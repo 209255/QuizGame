@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Scripts.Networking
-{
+
     class BluetoothServiceClient : IBluetoothServiceClient
     {
         public IRegister<MessageSubject, Action<IMessage>> callbackRegister
@@ -15,7 +14,24 @@ namespace Assets.Scripts.Networking
             }
         }
 
-        public event Action<IMessage> Received;
+        public ushort id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+    public bool isConnected
+    {
+        get
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public event Action OnIdFromServer;
+    public event Action<IMessage> Received;
 
         public bool Connect(string ip, int port)
         {
@@ -48,4 +64,4 @@ namespace Assets.Scripts.Networking
         }
 
     }
-}
+

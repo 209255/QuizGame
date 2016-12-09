@@ -7,10 +7,8 @@ public class ServerSetUp : IServerSetUp
     public ServerSetUp(ITcpListener socket)
     {
         this.socket = socket;
-
     }
-
-    public bool Start()
+     public bool Start()
     {
         if(!socket.IsBound)
         {

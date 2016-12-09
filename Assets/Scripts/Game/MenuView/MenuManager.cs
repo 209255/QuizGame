@@ -21,7 +21,7 @@
 
         public void ShowMenu(Menu menu)
         {
-
+        menu.EnableButtons();
             if (currentMenu != null)
                 currentMenu.IsOpen = false;
             currentMenu = menu;

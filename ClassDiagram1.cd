@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bootstrapper" Collapsed="true">
+    <Position X="34.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\DIContainer\Bootstrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DependencyResolver" Collapsed="true">
+    <Position X="34.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DIContainer\DependencyResolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CategoryContainer" Collapsed="true">
+    <Position X="36.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAgAAgCAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\CategoryContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientConnectionControler" BaseTypeListCollapsed="true">
+    <Position X="27" Y="12" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAACAAAAAAgAIAAkBEAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Game\ClientConnectionControler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ConnectionButtonsModel">
+    <Position X="22" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIBCAAAiAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\ConnectionButtonsModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFlowController" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>kAAygAIAIAAAA2AAIAAIQQAKAEAAAQAAggAIAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\GameFlowController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameOfflineController" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>kAAQAAIAAAAEAgAAAAAAAAAAAAAAAQAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\GameOfflineController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Menu" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQEAAgAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Game\MenuView\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuButtonController" Collapsed="true">
+    <Position X="31.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\MenuView\MenuButtonController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAIAAAAAAAAAAEAAAAEAAAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\MenuView\MenuManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="QuestionMenu" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAECAAAEACEAAAAAAAgAQAABCEEAAggAAgAEAgA=</HashCode>
+      <FileName>Assets\Scripts\Game\MenuView\QuestionMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Question" Collapsed="true">
+    <Position X="38.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAAAAACAAAAAAAAAIAQACABAAAQAAAAAAAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\Question.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BluetoothServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAABAAAIAAAAAMAAAIAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Bluetooth\Client\BluetoothServiceClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CategoryMsg" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\CategoryMsg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClosedRoom" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ClosedRoom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinishedQuestion" Collapsed="true">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\FinishedQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MessageSeparators" Collapsed="true">
+    <Position X="34.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Message" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIEAAAAAAEAAAAAAGAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\Message.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PlayerAskedToJoinGame" Collapsed="true">
+    <Position X="26.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\PlayerAskedToJoinGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerLeftRoom" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\PlayerLeftRoom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReadyToStartMsg" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ReadyToStartMsg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreMsg" Collapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ScoreMsg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerAcceptConnectionMsg" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ServerAcceptConnectionMsg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisconnectMessage" Collapsed="true">
+    <Position X="17.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ServerAcceptConnectionMsg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerAssignToRoom" Collapsed="true">
+    <Position X="19.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ServerAssignToRoom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerOnCreateRoom" Collapsed="true">
+    <Position X="22" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ServerOnCreateRoom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerPlayerJoin" Collapsed="true">
+    <Position X="24.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ServerPlayerJoin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerPlayerJoinToYourRoom" Collapsed="true">
+    <Position X="28.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ServerPlayerJoinToYourRoom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerStartGame" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\ServerStartGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEABAIAgAAAAAAgAAgEgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\Client.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ClientCommunication" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAABgAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\ClientCommunication.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ClientConnection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAAAAAAAAAIAAAAAAAAgAAAEgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\ClientConnection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InvalidIpAddressException" Collapsed="true">
+    <Position X="40" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\ClientConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientIsNotConnetedException" Collapsed="true">
+    <Position X="38.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\ClientConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientAlreadyConnectedException" Collapsed="true">
+    <Position X="40" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\ClientConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAQAAgAAABACAAAAAABAIAAgA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\ClientHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TCPServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAABAAAIAACACMAAAIAgCAAAAAAAAAAABAAAIgQ=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\TCPServiceClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ConnectionHandler" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAAAAAAAAiAgAAgAAAAAAAABAEAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\ConnectionHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Player">
+    <Position X="36.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIABAAAAAIAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room">
+    <Position X="38.5" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAgAAAAAAAABAACCAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomService" BaseTypeListCollapsed="true">
+    <Position X="34.25" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAACAAAAAAIAAEIAQAAAAAAAAAAAAgAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\RoomService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Server" BaseTypeListCollapsed="true">
+    <Position X="30.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAASCCAAAAAEAgAIAAgAAAAgAQAJgEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\Server.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ServerCommunication" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAACAAACAAAABgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\ServerCommunication.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ClientNotExistException" Collapsed="true">
+    <Position X="40" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\ServerCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerController">
+    <Position X="16.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEI=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\ServerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerSetUp" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAIAEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\ServerSetUp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TCPServiceServer" BaseTypeListCollapsed="true">
+    <Position X="18" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEIAAAQCCIAAAAAIAAAIAgEAAAAAQAJAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\TCPServiceServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TCPClientAdapter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAQAAAAAAAIIAAAAAAAAAAAAAABACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Utilities\TCPClientAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TcpListenerAdapter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACAAAAAAASAAAAAAQAAAAAAAIAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Utilities\TcpListenerAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Register&lt;Tkey, Tval&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="40" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Utilities\Register.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Assets.Scripts.Networking.BluetoothServiceServer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABAAAIAAAAAMAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Bluetooth\Server\BluetoothServiceServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="IClientConnectionController">
+    <Position X="27" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAACAAAAAAAAIAAABEAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Game\IClientConnectionController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IGameFlowController">
+    <Position X="22" Y="9.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\IGameFlowController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IMenuManager" Collapsed="true">
+    <Position X="34.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\MenuView\IMenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IBluetoothServiceClient" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Bluetooth\Client\IBluetoothServiceClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IClientServiceCommunication" Collapsed="true">
+    <Position X="1.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Networking\IClientServiceCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IServiceCommunication" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAIAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\IServiceCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IMessage" Collapsed="true">
+    <Position X="36.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\IMessage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IClient" Collapsed="true">
+    <Position X="33" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEAAAIAgAAAAAAgAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\IClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IClientCommunication" Collapsed="true">
+    <Position X="34.75" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\IClientCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IClientConnection" Collapsed="true">
+    <Position X="36.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\IClientConnection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IClientHandler" Collapsed="true">
+    <Position X="40" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAQAAgAAAAACAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\IClientHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ITCPServiceClient" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Client\ITCPServiceClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IConnectionHandler">
+    <Position X="26.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAgAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\IConnectionHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IRoomService">
+    <Position X="36.5" Y="12.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAIAAEAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\IRoomService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IServer">
+    <Position X="22" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCCAAAAAEAgAAAAgAAAAAAQAJAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\IServer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IServerCommunication">
+    <Position X="19.75" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAACAAACAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\IServerCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IServerSetUp">
+    <Position X="21.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\IServerSetUp.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ITCPServiceServer">
+    <Position X="16.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCCIAAAAAIAAAAAAEAAAAAQAJAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\ITCPServiceServer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ITcpClient" Collapsed="true">
+    <Position X="36.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAIIAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Utilities\ITcpClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ITcpListener" Collapsed="true">
+    <Position X="38.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACAAAAAAASAAAAAAQAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Utilities\ITcpListener.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IRegister&lt;Tkey, Tval&gt;" Collapsed="true">
+    <Position X="38.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Utilities\IRegister.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Assets.Scripts.Networking.IBluetoothServiceServer" Collapsed="true">
+    <Position X="31.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\Bluetooth\Server\IBluetoothServiceServer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MessageSubject" Collapsed="true">
+    <Position X="30" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAIgAABAAAIABRAAIAAAwAEAAABAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Networking\Message\MessageSubject.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="NewMessage" Collapsed="true">
+    <Position X="30" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Networking\TCP\Server\ServerCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

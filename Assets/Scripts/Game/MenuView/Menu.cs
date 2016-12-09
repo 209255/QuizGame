@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using Autofac;
+using UnityEngine.UI;
+using System;
 
 public class Menu : MonoBehaviour {
 
     public bool isMainMenu = false;
 	private Animator _animator;
 	private CanvasGroup _canvasGroup;
+    private Button[] myButtons;
 
 	public bool IsOpen{
 
@@ -21,10 +24,28 @@ public class Menu : MonoBehaviour {
 
 		var rect = GetComponent<RectTransform> ();
 		rect.offsetMax = rect.offsetMin = new Vector2 (0, 0);
-
+        DisableButtons();
         RegisterMainMenu();
 
+        myButtons = GetComponentsInChildren<Button>();
+       
+
 	}
+
+    public void EnableButtons()
+    {
+        if (myButtons == null)
+            return;
+        foreach (Button but in myButtons)
+            but.enabled = true;
+    }
+    public void DisableButtons()
+    {
+        if (myButtons == null)
+            return;
+        foreach (Button but in myButtons)
+            but.enabled = false;
+    }
 
     private void RegisterMainMenu()
     {

@@ -13,11 +13,13 @@ using System.Text;
         ServerPlayerJoin,
         ServerAssignToRoom,
         ServerStartGame,
+        ServerCreateRoom,
         Score,
         ServerAcceptConnection,
         PlayerAskedToJoinGame,
         ServerPlayerJoinToYourRoom ,
         PlayerLeftRoom,
+        QuestionFinished,
         ClosedRoom
 
 }
